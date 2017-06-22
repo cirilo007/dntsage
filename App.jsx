@@ -33,62 +33,35 @@ class App extends React.Component {
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.7 - Rpi2</h3>
-                      <Video autoPlay loop
-                          controls={['PlayPause', 'Time', 'Volume', 'Fullscreen']}
-                          onCanPlayThrough={() => {
-                              // Do stuff
-                              //alert("video streaming received");
-
-                          }}>
-                          <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
-                      </Video>
+                      <video>
+                          <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
+                      </video>
                   </Col>
 
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <Video autoPlay loop className="video_zero"
-                          controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-                          onCanPlayThrough={() => {
-                              // Do stuff
-
-                          }}>
+                      <video>
                           <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
-                      </Video>
+                      </video>
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.7 - Rpi2</h3>
-                      <Video autoPlay loop
-                          controls={['PlayPause', 'Time', 'Volume', 'Fullscreen']}
-                          onCanPlayThrough={() => {
-                              // Do stuff
-                              //alert("video streaming received");
-
-                          }}>
-                          <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
-                      </Video>
+                      <video>
+                          <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
+                      </video>
                   </Col>
 
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <Video autoPlay loop className="video_zero"
-                          controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-                          onCanPlayThrough={() => {
-                              // Do stuff
-
-                          }}>
+                      <video>
                           <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
-                      </Video>
+                      </video>
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <Video autoPlay loop className="video_zero"
-                          controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-                          onCanPlayThrough={() => {
-                              // Do stuff
-
-                          }}>
+                      <video>
                           <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
-                      </Video>
+                      </video>
                   </Col>
                 </Row>
                 <Row className="show-grid ">
@@ -96,62 +69,35 @@ class App extends React.Component {
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.7 - Rpi2</h3>
-                      <Video autoPlay loop
-                          controls={['PlayPause', 'Time', 'Volume', 'Fullscreen']}
-                          onCanPlayThrough={() => {
-                              // Do stuff
-                              //alert("video streaming received");
-
-                          }}>
+                      <video>
                           <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
-                      </Video>
+                      </video>
                   </Col>
 
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <Video autoPlay loop className="video_zero"
-                          controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-                          onCanPlayThrough={() => {
-                              // Do stuff
-
-                          }}>
-                          <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
-                      </Video>
+                      <video>
+                          <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
+                      </video>
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.7 - Rpi2</h3>
-                      <Video autoPlay loop
-                          controls={['PlayPause', 'Time', 'Volume', 'Fullscreen']}
-                          onCanPlayThrough={() => {
-                              // Do stuff
-                              //alert("video streaming received");
-
-                          }}>
+                      <video>
                           <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
-                      </Video>
+                      </video>
                   </Col>
 
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <Video autoPlay loop className="video_zero"
-                          controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-                          onCanPlayThrough={() => {
-                              // Do stuff
-
-                          }}>
-                          <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
-                      </Video>
+                      <video>
+                          <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
+                      </video>
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <Video autoPlay loop className="video_zero"
-                          controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-                          onCanPlayThrough={() => {
-                              // Do stuff
-
-                          }}>
-                          <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
-                      </Video>
+                      <video>
+                          <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
+                      </video>
                   </Col>
                 </Row>
               </Grid>
