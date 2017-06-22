@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Header from './components/header.js';
 import Footer from './components/footer.js';
 import Timer from 'react-timer';
-import { DefaultPlayer as Video } from 'react-html5video';
+//import { DefaultPlayer as Video } from 'react-html5video';
 
 import {Grid, Row, Col }  from 'react-bootstrap';
 
@@ -33,33 +33,33 @@ class App extends React.Component {
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.7 - Rpi2</h3>
-                      <video>
+                      <video controls autoPlay loop>
                           <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
                       </video>
                   </Col>
 
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <video>
+                      <video controls autoPlay loop>
                           <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
                       </video>
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.7 - Rpi2</h3>
-                      <video>
+                      <video controls autoPlay loop>
                           <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
                       </video>
                   </Col>
 
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <video>
+                      <video controls autoPlay loop>
                           <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
                       </video>
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <video>
+                      <video controls autoPlay loop>
                           <source src="http://10.0.0.8:8080/stream" type="video/ogg" />
                       </video>
                   </Col>
@@ -69,33 +69,33 @@ class App extends React.Component {
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.7 - Rpi2</h3>
-                      <video>
+                      <video controls autoPlay loop>
                           <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
                       </video>
                   </Col>
 
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <video>
+                      <video controls autoPlay loop>
                           <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
                       </video>
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.7 - Rpi2</h3>
-                      <video>
+                      <video controls autoPlay loop>
                           <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
                       </video>
                   </Col>
 
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <video>
+                      <video controls autoPlay loop>
                           <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
                       </video>
                   </Col>
                   <Col sm={2}>
                     <h3>10.0.0.8 - Rpi2</h3>
-                      <video>
+                      <video controls autoPlay loop>
                           <source src="http://10.0.0.7:8080/stream" type="video/ogg" />
                       </video>
                   </Col>
