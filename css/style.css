@@ -1,17 +1,9 @@
-.rh5v-DefaultPlayer_component {
-  transition: opacity 0.5s;
- opacity: 1;
+img{
+  background:#e2e2e2;
 }
 
- .col-sm-2{
-   background:url("/img/gears.svg") no-repeat center center none;
-   border: 1px solid #d1cdc5;
- }
-
-.video_zero{
-  transition: opacity 0.5s;
- opacity: 1;
-}
-.video_zero.show{
- opacity: 1;
+.col-sm-1{
+  border:1px solid #f2f2f2;
+  padding-bottom:20px;
+  text-align: center;
 }
