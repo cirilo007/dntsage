@@ -39,9 +39,6 @@ export default class ImageReload extends React.Component {
     var bytes = req.getResponseHeader("Content-Length").toLowerCase();
 
     this.setState({bytes: bytes });
-    if(bytes > 6000){
-      this.setState({color: "bg-success" });
-    }
 
     if(bytes > 9000){
       this.setState({color: "bg-success" });
