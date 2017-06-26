@@ -20,442 +20,379 @@ class App extends React.Component {
 
                 <Row>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
                       name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
                       name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="3"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="4"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="5"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="6"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="7"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="8"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="9"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="10"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="11"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="12"
+                      name="2"
                       />
                   </ Col>
 
                 </Row>
                 <Row>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
                       name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
                       name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="3"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="4"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="5"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="6"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="7"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="8"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="9"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="10"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="11"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="12"
+                      name="2"
                       />
                   </ Col>
 
                 </Row>
                 <Row>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
                       name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
                       name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="3"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="4"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="5"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="6"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="7"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="8"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="9"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="10"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="11"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="12"
+                      name="2"
                       />
                   </ Col>
 
                 </Row>
                 <Row>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
                       name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
                       name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="3"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="4"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="5"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="6"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="7"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="8"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="9"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="10"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="11"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="12"
+                      name="2"
                       />
                   </ Col>
 
                 </Row>
                 <Row>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
                       name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
                       name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="3"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="4"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="5"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="6"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="7"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="8"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="9"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="10"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>1</span>
                     <ImageReload
                       ip="10.0.0.7"
-                      name="11"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
-                    <span>2</span>
                     <ImageReload
                       ip="10.0.0.8"
-                      name="12"
+                      name="2"
                       />
                   </ Col>
 
                 </Row>
-
-
-
               </Grid>
             </div>
        </div>

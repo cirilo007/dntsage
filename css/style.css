@@ -11,6 +11,11 @@ img{
 .bg-success{
   background:green;
     color:white;
+
+}
+.bg-black{
+  background:black;
+  color:white;
 }
 .bg-danger{
   background:red;
@@ -19,4 +24,7 @@ img{
 .bg-connecting{
   background:blue;
   color:white;
+}
+.holder{
+  transition: background 1s ease-in;
 }

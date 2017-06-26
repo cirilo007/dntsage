@@ -9,6 +9,7 @@ export default class ImageReload extends React.Component {
          this.state = {
            url: "http://" + this.props.ip + "/img/home.jpg",
            size: "dimensions",
+           color: "holder bg-black"
 
          };
          this.tick = this.tick.bind(this);
@@ -33,19 +34,18 @@ export default class ImageReload extends React.Component {
 
     this.setState({bytes: bytes });
 
-    if(bytes > 9000){
-      this.setState({color: "bg-success" });
-
-
-    } else {
-      this.setState({color: "bg-danger" });
+    if (bytes > 7000 && bytes < 9000) {
+      this.setState({url: "http://" + this.props.ip + "/img/home.jpg?time="+new Date().getTime()});
+      this.setState({color: "holder bg-danger" });
     }
 
-    if(bytes == 4096 || bytes == 0){
-        this.setState({color: "bg-success" });
+    if (bytes > 9000) {
+      this.setState({url: "http://" + this.props.ip + "/img/home.jpg?time="+new Date().getTime()});
+      this.setState({color: "holder bg-success" });
     }
 
-    this.setState({url: "http://" + this.props.ip + "/img/home.jpg?time="+new Date().getTime()});
+
+
 
     //  alert( img.width+' '+ img.height );
 
