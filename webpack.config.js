@@ -10,6 +10,9 @@
       inline: true,
       port: 8080
    },
+   node: {
+      fs: 'empty'
+    },
 
    module: {
       loaders: [

@@ -1,9 +1,18 @@
 img{
-  background:#e2e2e2;
+  background:blue;
+  height:100%;
 }
 
 .col-sm-1{
   border:1px solid #f2f2f2;
   padding-bottom:20px;
   text-align: center;
+}
+.bg-success{
+  background:green;
+    color:white;
+}
+.bg-danger{
+  background:red;
+  color:white;
 }
