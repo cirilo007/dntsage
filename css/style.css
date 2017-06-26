@@ -1,5 +1,5 @@
 img{
-  background:blue;
+  background:black;
   height:100%;
 }
 
@@ -26,5 +26,5 @@ img{
   color:white;
 }
 .holder{
-  transition: background 1s ease-in;
+  transition: background 1s ease;
 }

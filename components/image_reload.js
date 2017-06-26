@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
+import Lightbox from 'react-image-lightbox';
 
 export default class ImageReload extends React.Component {
 
   constructor(props) {
          super(props);
          this.state = {
-           url: "http://" + this.props.ip + "/img/home.jpg",
+           url: this.props.url,
            size: "dimensions",
            color: "holder bg-black"
 
@@ -19,7 +19,7 @@ export default class ImageReload extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,2000);
+      this.tick,1000);
 
   }
 
@@ -28,19 +28,19 @@ export default class ImageReload extends React.Component {
   tick(){
 
     var req = new XMLHttpRequest();
-    req.open('GET', "http://" + this.props.ip + "/img/home.jpg?time="+new Date().getTime(), false);
+    req.open('GET', this.props.url +"?time="+new Date().getTime(), false);
     req.send(null);
     var bytes = req.getResponseHeader("Content-Length").toLowerCase();
 
     this.setState({bytes: bytes });
 
     if (bytes > 7000 && bytes < 9000) {
-      this.setState({url: "http://" + this.props.ip + "/img/home.jpg?time="+new Date().getTime()});
+      this.setState({url: this.props.url + "?time="+new Date().getTime()});
       this.setState({color: "holder bg-danger" });
     }
 
     if (bytes > 9000) {
-      this.setState({url: "http://" + this.props.ip + "/img/home.jpg?time="+new Date().getTime()});
+      this.setState({url: this.props.url + "?time="+new Date().getTime()});
       this.setState({color: "holder bg-success" });
     }
 
@@ -57,9 +57,7 @@ export default class ImageReload extends React.Component {
       return (
       <div className={this.state.color}>
         <h3>{this.props.name}</h3>
-          <small>{this.state.bytes} kb </small>
-          <br />
-
+          <small> {this.state.bytes} kb </small>
           <img src={this.state.url} className="img-responsive" />
       </div>
     );
