@@ -34,61 +34,61 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.7/img/home.jpg"
-                      name="1"
+                      name="3"
                       />
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="2"
+                      name="4"
                       />
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.7/img/home.jpg"
-                      name="1"
+                      name="5"
                       />
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="2"
+                      name="6"
                       />
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.7/img/home.jpg"
-                      name="1"
+                      name="7"
                       />
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="2"
+                      name="8"
                       />
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.7/img/home.jpg"
-                      name="1"
+                      name="9"
                       />
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="2"
+                      name="10"
                       />
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.7/img/home.jpg"
-                      name="1"
+                      name="11"
                       />
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="2"
+                      name="12"
                       />
                   </ Col>
 

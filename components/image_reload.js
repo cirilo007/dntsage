@@ -19,7 +19,7 @@ export default class ImageReload extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,2000);
+      this.tick,1000);
 
   }
 
@@ -66,16 +66,18 @@ var self = this;
 
       var base64 = window.btoa(data);
 
-      document.getElementById(imageid).src="data:image/png;base64,"+base64;
+
 
       var bytes = xhr.getResponseHeader("content-length").toLowerCase();
       self.setState({bytes: bytes });
 
       if (bytes > 7000 && bytes < 9000) {
         self.setState({color: "holder bg-danger" });
+        document.getElementById(imageid).src="data:image/png;base64,"+base64;
       }
       if (bytes > 9000) {
         self.setState({color: "holder bg-success" });
+        document.getElementById(imageid).src="data:image/png;base64,"+base64;
       }
 
 
