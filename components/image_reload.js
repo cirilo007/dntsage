@@ -19,7 +19,7 @@ export default class ImageReload extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,1000);
+      this.tick,2000);
 
   }
 
@@ -45,56 +45,46 @@ export default class ImageReload extends React.Component {
     }
 */
 //console.log("Starting new download on " +this.props.url);
-var self = this;
+    var self = this;
 
     var xhr = new XMLHttpRequest();
     var imageid = "video_"+this.props.name;
-    xhr.open('GET', this.props.url +"?time="+new Date().getTime(), true);
+    xhr.open('GET', this.props.url, true);
 
     xhr.responseType = 'arraybuffer';
 
     xhr.onload = function(e) {
-    if (this.status == 200) {
-      var uInt8Array = new Uint8Array(this.response);
-      var i = uInt8Array.length;
-      var binaryString = new Array(i);
-      while (i--)
-      {
-        binaryString[i] = String.fromCharCode(uInt8Array[i]);
+      if (this.status == 200) {
+        var uInt8Array = new Uint8Array(this.response);
+        var i = uInt8Array.length;
+        var binaryString = new Array(i);
+        while (i--)
+        {
+          binaryString[i] = String.fromCharCode(uInt8Array[i]);
+        }
+        var data = binaryString.join('');
+
+        var base64 = window.btoa(data);
+
+        // get bytes and apply styles
+        var bytes = xhr.getResponseHeader("content-length").toLowerCase();
+        self.setState({bytes: bytes });
+
+        if (bytes > 7000 && bytes < 9000) {
+          self.setState({color: "holder bg-danger" });
+          document.getElementById(imageid).src="data:image/png;base64,"+base64;
+        }
+        if (bytes > 9000) {
+          self.setState({color: "holder bg-success" });
+          document.getElementById(imageid).src="data:image/png;base64,"+base64;
+        }
+
+
+
       }
-      var data = binaryString.join('');
-
-      var base64 = window.btoa(data);
-
-
-
-      var bytes = xhr.getResponseHeader("content-length").toLowerCase();
-      self.setState({bytes: bytes });
-
-      if (bytes > 7000 && bytes < 9000) {
-        self.setState({color: "holder bg-danger" });
-        document.getElementById(imageid).src="data:image/png;base64,"+base64;
-      }
-      if (bytes > 9000) {
-        self.setState({color: "holder bg-success" });
-        document.getElementById(imageid).src="data:image/png;base64,"+base64;
-      }
-
-
-
-    }
     };
 
     xhr.send();
-
-
-
-
-
-
-
-
-    //  alert( img.width+' '+ img.height );
 
   }
 
