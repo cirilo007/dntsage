@@ -27,20 +27,8 @@ class App extends React.Component {
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home3.jpg"
+                      url="http://10.0.0.7/img/home.jpg"
                       name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -51,8 +39,8 @@ class App extends React.Component {
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
+                      url="http://10.0.0.7/img/home.jpg"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -63,8 +51,8 @@ class App extends React.Component {
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
+                      url="http://10.0.0.7/img/home.jpg"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -75,8 +63,8 @@ class App extends React.Component {
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
+                      url="http://10.0.0.7/img/home.jpg"
+                      name="1"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -87,36 +75,8 @@ class App extends React.Component {
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-
-
-                </Row>
-                <Row>
-                  <Col sm={1}>
-                    <ImageReload
                       url="http://10.0.0.7/img/home.jpg"
                       name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home3.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -127,275 +87,10 @@ class App extends React.Component {
                   </ Col>
                   <Col sm={1}>
                     <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
                       url="http://10.0.0.7/img/home.jpg"
                       name="1"
                       />
                   </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-
-
-                </Row>
-                <Row>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home3.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-
-
-                </Row>
-                <Row>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home3.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-
-
-                </Row>
-                <Row>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home3.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home.jpg"
-                      name="1"
-                      />
-                  </ Col>
-                  <Col sm={1}>
-                    <ImageReload
-                      url="http://10.0.0.7/img/home2.jpg"
-                      name="2"
-                      />
-                  </ Col>
-
 
                 </Row>
               </Grid>
