@@ -28,7 +28,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -40,7 +40,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -52,7 +52,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -64,7 +64,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -76,7 +76,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -88,7 +88,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
 
@@ -103,7 +103,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -115,7 +115,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -127,7 +127,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -139,7 +139,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -151,7 +151,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -163,7 +163,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
 
@@ -178,7 +178,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -190,7 +190,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -202,7 +202,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -214,7 +214,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -226,7 +226,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -238,7 +238,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
 
@@ -253,7 +253,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -265,7 +265,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -277,7 +277,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -289,7 +289,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -301,7 +301,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -313,7 +313,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
 
@@ -328,7 +328,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -340,7 +340,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -352,7 +352,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -364,7 +364,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -376,7 +376,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
                   <Col sm={1}>
@@ -388,7 +388,7 @@ class App extends React.Component {
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.8/img/home.jpg"
-                      name="1"
+                      name="2"
                       />
                   </ Col>
 
