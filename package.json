@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --port 1234"
+    "start": "webpack-dev-server --hot --port 1234",
+    "stop": "pkill --signal SIGINT refurbish"
   },
   "author": "",
   "license": "ISC",

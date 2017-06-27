@@ -19,6 +19,18 @@ class App extends React.Component {
               <Grid fluid >
 
                 <Row>
+                  <Col sm={6}>
+                    <img src="/img/logo.png" />
+                  </ Col>
+                  <Col sm={6}>
+                    <Timer options={OPTIONS} />
+                  </ Col>
+                </ Row>
+              </ Grid>
+
+              <Grid fluid >
+
+                <Row>
                   <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.7/img/home.jpg"
