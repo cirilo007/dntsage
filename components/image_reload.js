@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Lightbox from 'react-image-lightbox';
 
 export default class ImageReload extends React.Component {
 
