@@ -159,8 +159,7 @@ export default class ImageReload extends React.Component {
       return (
       <div className={this.state.color}>
         <h3>{this.props.name}</h3>
-          <small> {this.state.bytes} kb </small>
-          <img src={this.props.url} id={imageid} className="img-responsive" />
+          <img src={this.props.url} id={imageid} className="img-responsive" alt={this.state.bytes} />
       </div>
     );
   }
