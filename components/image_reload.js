@@ -74,7 +74,11 @@ export default class ImageReload extends React.Component {
           self.setState({color: "holder bg-danger" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
-        if (bytes > 9000) {
+        else if (bytes > 26500 && bytes < 27900) {
+          self.setState({color: "holder bg-danger" });
+          document.getElementById(imageid).src="data:image/png;base64,"+base64;
+        }
+        else {
           self.setState({color: "holder bg-success" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
@@ -159,6 +163,7 @@ export default class ImageReload extends React.Component {
       return (
       <div className={this.state.color}>
         <h3>{this.props.name}</h3>
+          <small> {this.state.bytes} kb </small>
           <img src={this.props.url} id={imageid} className="img-responsive" alt={this.state.bytes} />
       </div>
     );
