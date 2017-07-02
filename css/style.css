@@ -1,12 +1,27 @@
-img{
-  background:black;
-  height:100%;
+body{
+  background:#fff;
 }
 
-.col-sm-1{
-  border:1px solid #f2f2f2;
+img{
+  height:100%;
+  position:relative;
+  background: #212121;
+}
+
+h5{
+  padding:15px 0 0 0;
+  vertical-align: middle;
+}
+h5 > span{
+  font-size:20px;
+  font-weight: bold;
+  margin-top:-15px;
+  float:left;
+  padding:10px;
+  background:#212121;
+}
+.col-sm-2{
   padding-bottom:20px;
-  text-align: center;
 }
 .bg-success{
   background:green;
@@ -14,8 +29,8 @@ img{
 
 }
 .bg-black{
-  background:black;
   color:white;
+  background: #212121;
 }
 .bg-danger{
   background:red;
@@ -27,4 +42,13 @@ img{
 }
 .holder{
   transition: background 1s ease;
+}
+.timer{
+  position:absolute;
+  top:60px;
+  z-index:999;
+  background:rgba(255,255,255,0.5);
+  right:20px;
+  padding:3px;
+  border-radius: 5px;
 }

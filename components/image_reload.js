@@ -8,7 +8,9 @@ export default class ImageReload extends React.Component {
          this.state = {
            url: this.props.url,
            size: "0",
-           color: "holder bg-black"
+           color: "holder bg-black",
+           bytes: "...",
+           message: "Connecting..."
 
          };
          this.tick = this.tick.bind(this);
@@ -25,32 +27,22 @@ export default class ImageReload extends React.Component {
 
 
   tick(){
-/*
-    var req = new XMLHttpRequest();
-    req.open('GET', this.props.url +"?time="+new Date().getTime(), false);
-    req.send(null);
-    var bytes = req.getResponseHeader("Content-Length").toLowerCase();
 
-    this.setState({bytes: bytes });
-
-    if (bytes > 7000 && bytes < 9000) {
-      this.setState({url: this.props.url + "?time="+new Date().getTime()});
-      this.setState({color: "holder bg-danger" });
-    }
-
-    if (bytes > 9000) {
-      this.setState({url: this.props.url + "?time="+new Date().getTime()});
-      this.setState({color: "holder bg-success" });
-    }
-*/
-//console.log("Starting new download on " +this.props.url);
     var self = this;
 
     var xhr = new XMLHttpRequest();
     var imageid = "video_"+this.props.name;
     xhr.open('GET', this.props.url, true);
-
+    xhr.timeout = 2000,
     xhr.responseType = 'arraybuffer';
+
+    xhr.ontimeout = function(e) {
+      self.setState({color: "holder bg-black" });
+      self.setState({message: "Connection lost. Reconnecting..." });
+      self.setState({bytes: "0" });
+      document.getElementById(imageid).src="/img/no-connection.png";
+
+    }
 
     xhr.onload = function(e) {
       if (this.status == 200) {
@@ -68,17 +60,22 @@ export default class ImageReload extends React.Component {
         // get bytes and apply styles
         var bytes = xhr.getResponseHeader("content-length").toLowerCase();
         self.setState({bytes: bytes });
+        if (bytes < 7000){
 
-        if (bytes > 7000 && bytes < 9000) {
+        }
+        else if (bytes > 7000 && bytes < 9000) {
           self.setState({color: "holder bg-danger" });
+          self.setState({message: "No signal from RCA" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
-        else if (bytes > 26500 && bytes < 27900) {
+        else if (bytes > self.props.resMin && bytes < self.props.resMax) {
           self.setState({color: "holder bg-danger" });
+          self.setState({message: "No signal from HDMI" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else {
           self.setState({color: "holder bg-success" });
+          self.setState({message: "OK" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
 
@@ -161,9 +158,11 @@ export default class ImageReload extends React.Component {
     var imageid = "video_"+this.props.name;
       return (
       <div className={this.state.color}>
-        <h3>{this.props.name}</h3>
-          <small> {this.state.bytes} kb </small>
-          <img src={this.props.url} id={imageid} className="img-responsive" alt={this.state.bytes} />
+        <h5><span>#{this.props.name}</span> &nbsp;{this.state.message}</h5>
+          <small className="timer"> Flux {this.state.bytes} kb </small>
+          <div className="crop">
+            <img src="img/no-connection.png" id={imageid} className="img-responsive" alt={this.state.bytes} />
+          </div>
       </div>
     );
   }
