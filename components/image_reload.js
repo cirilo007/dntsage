@@ -6,7 +6,7 @@ export default class ImageReload extends React.Component {
   constructor(props) {
          super(props);
          this.state = {
-           url: this.props.url,
+           url: this.props.url + "?time="+new Date().getTime(),
            size: "0",
            color: "holder bg-black",
            bytes: "...",
@@ -32,13 +32,13 @@ export default class ImageReload extends React.Component {
 
     var xhr = new XMLHttpRequest();
     var imageid = "video_"+this.props.name;
-    xhr.open('GET', this.props.url, true);
-    xhr.timeout = 2000,
+    xhr.open('GET', this.props.url + "?time="+new Date().getTime(), true);
+    xhr.timeout = 1000,
     xhr.responseType = 'arraybuffer';
 
     xhr.ontimeout = function(e) {
       self.setState({color: "holder bg-black" });
-      self.setState({message: "Connection lost. Reconnecting..." });
+      self.setState({message: "Reconnecting..." });
       self.setState({bytes: "0" });
       document.getElementById(imageid).src="/img/no-connection.png";
 
@@ -82,6 +82,7 @@ export default class ImageReload extends React.Component {
 
 
       }
+
     };
 
     xhr.send();
@@ -159,7 +160,7 @@ export default class ImageReload extends React.Component {
       return (
       <div className={this.state.color}>
         <h5><span>#{this.props.name}</span> &nbsp;{this.state.message}</h5>
-          <small className="timer"> Flux {this.state.bytes} kb </small>
+          <small className="timer"> Feed {this.state.bytes} kb </small>
           <div className="crop">
             <img src="img/no-connection.png" id={imageid} className="img-responsive" alt={this.state.bytes} />
           </div>
