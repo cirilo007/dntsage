@@ -36,6 +36,10 @@ h5 > span{
   background:red;
   color:white;
 }
+.bg-active{
+  background:pink;
+  color:white;
+}
 .bg-connecting{
   background:blue;
   color:white;
@@ -51,4 +55,11 @@ h5 > span{
   right:20px;
   padding:3px;
   border-radius: 5px;
+}
+
+.image_reloader{
+  height:30px;
+  width:30px;
+  margin-top:-10px;
+  padding-right:10px;
 }

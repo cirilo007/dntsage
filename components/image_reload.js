@@ -1,34 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Loader from '../components/image_loader.jsx';
+
 export default class ImageReload extends React.Component {
 
   constructor(props) {
          super(props);
          this.state = {
-           url: this.props.url + "?time="+new Date().getTime(),
+           url: this.props.url,
            size: "0",
            color: "holder bg-black",
            bytes: "...",
-           message: "Connecting..."
+           message: "Connecting...",
+           showLoader: false
 
          };
          this.tick = this.tick.bind(this);
          this.componentDidMount = this.componentDidMount.bind(this);
      }
-
-
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,2000);
+      this.tick,1000);
 
   }
-
-
-
   tick(){
 
     var self = this;
+
+    this.setState({showLoader: true});
 
     var xhr = new XMLHttpRequest();
     var imageid = "video_"+this.props.name;
@@ -38,7 +38,7 @@ export default class ImageReload extends React.Component {
 
     xhr.ontimeout = function(e) {
       self.setState({color: "holder bg-black" });
-      self.setState({message: "Reconnecting..." });
+      self.setState({message: "Timeout, reconnecting..." });
       self.setState({bytes: "0" });
       document.getElementById(imageid).src="/img/no-connection.png";
 
@@ -64,17 +64,17 @@ export default class ImageReload extends React.Component {
 
         }
         else if (bytes > 7000 && bytes < 9000) {
-          self.setState({color: "holder bg-danger" });
+          //self.setState({color: "holder bg-danger" });
           self.setState({message: "No signal from RCA" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else if (bytes > self.props.resMin && bytes < self.props.resMax) {
-          self.setState({color: "holder bg-danger" });
+          //self.setState({color: "holder bg-danger" });
           self.setState({message: "No signal from HDMI" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else {
-          self.setState({color: "holder bg-success" });
+          //self.setState({color: "holder bg-success" });
           self.setState({message: "OK" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
@@ -86,9 +86,8 @@ export default class ImageReload extends React.Component {
     };
 
     xhr.send();
-
+    this.setState({showLoader: false});
   }
-
   customBase64Encode (inputStr) {
       var
           bbLen               = 3,
@@ -154,12 +153,16 @@ export default class ImageReload extends React.Component {
       }
       return output;
   }
-
   render() {
     var imageid = "video_"+this.props.name;
       return (
       <div className={this.state.color}>
-        <h5><span>#{this.props.name}</span> &nbsp;{this.state.message}</h5>
+        <h5>
+          <span>#{this.props.name}</span> &nbsp;{this.state.message}
+          { this.state.showLoader ? <Loader /> : null }
+
+        </h5>
+
           <small className="timer"> Feed {this.state.bytes} kb </small>
           <div className="crop">
             <img src="img/no-connection.png" id={imageid} className="img-responsive" alt={this.state.bytes} />
@@ -167,4 +170,4 @@ export default class ImageReload extends React.Component {
       </div>
     );
   }
-}
+};
