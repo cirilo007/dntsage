@@ -63,12 +63,7 @@ export default class ImageReload extends React.Component {
         if (bytes < 7000){
 
         }
-        else if (bytes > 7000 && bytes < 9000) {
-          //self.setState({color: "holder bg-danger" });
-          self.setState({message: "No signal from RCA" });
-          document.getElementById(imageid).src="data:image/png;base64,"+base64;
-        }
-        else if (bytes > self.props.resMin && bytes < self.props.resMax) {
+        else if (bytes > 7000 && bytes < 21500) {
           //self.setState({color: "holder bg-danger" });
           self.setState({message: "No signal from HDMI" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;

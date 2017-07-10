@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom';
 import Header from '../components/header.js';
 import Footer from '../components/footer.js';
 import ImageReload from '../components/image_reload.js';
+import ButtonReset from '../components/button_factory_reset.jsx';
 import Timer from 'react-timer';
+
+
 
 //import { DefaultPlayer as Video } from 'react-html5video';
 
@@ -19,10 +22,14 @@ export default class Videotest extends React.Component {
             <div>
               <Grid fluid >
                 <Row>
-                  <Col sm={6}>
+                  <Col sm={4}>
                     <img src="/img/logo.png" />
                   </ Col>
-                  <Col sm={6}>
+                  <Col sm={4}>
+                    <ButtonReset />
+
+                  </ Col>
+                  <Col sm={4}>
                     <Grid>
                       <Row>
                         <Col sm={6}>
@@ -91,7 +98,7 @@ export default class Videotest extends React.Component {
                     </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://10.0.0.9/img/home6.jpg"
+                      url="http://10.0.0.11/img/home.jpg"
                       name="6"
                       resMax = "29000"
                       resMin="26600"
@@ -99,7 +106,7 @@ export default class Videotest extends React.Component {
                   </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://10.0.0.9/img/home7.jpg"
+                      url="http://10.0.0.11/img/home2.jpg"
                       name="7"
                       resMax = "29000"
                       resMin="26600"
@@ -107,7 +114,7 @@ export default class Videotest extends React.Component {
                   </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://10.0.0.9/img/home8.jpg"
+                      url="http://10.0.0.11/img/home3.jpg"
                       name="8"
                       resMax = "29000"
                       resMin="26600"
@@ -115,7 +122,7 @@ export default class Videotest extends React.Component {
                   </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://10.0.0.9/img/home9.jpg"
+                      url="http://10.0.0.11/img/home4.jpg"
                       name="9"
                       resMax = "29000"
                       resMin="26600"
@@ -123,7 +130,7 @@ export default class Videotest extends React.Component {
                   </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://10.0.0.9/img/home10.jpg"
+                      url="http://10.0.0.11/img/home5.jpg"
                       name="10"
                       resMax = "29000"
                       resMin="26600"
