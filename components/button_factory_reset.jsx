@@ -1,14 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function factoryReset(e) {
-  alert("boom");
-  var sys = require('sys')
-  var exec = require('child_process').exec;
-  function puts(error, stdout, stderr) { sys.puts(stdout) }
-  exec("sh lirc.sh", puts);
-}
-
 export default class ButtonReset extends React.Component {
 
   constructor(props) {
@@ -17,10 +9,15 @@ export default class ButtonReset extends React.Component {
      }
   componentDidMount() {
   }
+
+  factoryReset(e) {
+    alert("boom");
+  }
+
   render() {
     return (
       <div>
-        <button onClick={factoryReset}>
+        <button onClick={this.factoryReset.bind(this)}>
           Factory Reset
         </button>
       </div>

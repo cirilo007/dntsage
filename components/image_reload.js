@@ -14,14 +14,13 @@ export default class ImageReload extends React.Component {
            bytes: "...",
            message: "Connecting...",
            showLoader: false
-
          };
          this.tick = this.tick.bind(this);
          this.componentDidMount = this.componentDidMount.bind(this);
      }
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,1000);
+      this.tick,2000);
 
   }
   tick(){
@@ -32,7 +31,7 @@ export default class ImageReload extends React.Component {
 
     var xhr = new XMLHttpRequest();
     var imageid = "video_"+this.props.name;
-    xhr.open('GET', this.props.url + "?time="+new Date().getTime(), true);
+    xhr.open('GET', this.props.url, true);
     xhr.timeout = 1000,
     xhr.responseType = 'arraybuffer';
 
@@ -45,7 +44,7 @@ export default class ImageReload extends React.Component {
     }
 
     xhr.onload = function(e) {
-      if (this.status == 200) {
+      if (this.status === 200) {
         var uInt8Array = new Uint8Array(this.response);
         var i = uInt8Array.length;
         var binaryString = new Array(i);
@@ -60,16 +59,17 @@ export default class ImageReload extends React.Component {
         // get bytes and apply styles
         var bytes = xhr.getResponseHeader("content-length").toLowerCase();
         self.setState({bytes: bytes });
+
         if (bytes < 7000){
 
         }
         else if (bytes > 7000 && bytes < 21500) {
-          //self.setState({color: "holder bg-danger" });
+          self.setState({color: "holder bg-danger" });
           self.setState({message: "No signal from HDMI" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else {
-          //self.setState({color: "holder bg-success" });
+          self.setState({color: "holder bg-success" });
           self.setState({message: "OK" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
@@ -81,7 +81,7 @@ export default class ImageReload extends React.Component {
     };
 
     xhr.send();
-    this.setState({showLoader: false});
+    self.setState({showLoader: false });
   }
   customBase64Encode (inputStr) {
       var
@@ -151,11 +151,10 @@ export default class ImageReload extends React.Component {
   render() {
     var imageid = "video_"+this.props.name;
       return (
-      <div className={this.state.color}>
+      <div className="bg-black">
         <h5>
-          <span>#{this.props.name}</span> &nbsp;{this.state.message}
-          { this.state.showLoader ? <Loader /> : null }
-
+          <span className={this.state.color}>#{this.props.name}</span> &nbsp;{this.state.message}
+            {this.state.showLoader ? <Loader /> : null}
         </h5>
 
           <small className="timer"> Feed {this.state.bytes} kb </small>

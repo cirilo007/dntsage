@@ -30,7 +30,7 @@ h5 > span{
 }
 .bg-black{
   color:white;
-  background: #212121;
+  background: #666;
 }
 .bg-danger{
   background:red;
@@ -62,4 +62,25 @@ h5 > span{
   width:30px;
   margin-top:-10px;
   padding-right:10px;
+  background:none;
+  -webkit-animation:fadein 1s;
+  -webkit-animation:fadeout 1s;
+  -webkit-animation-delay:fadeout 1s;
+}
+
+@-webkit-keyframes fadein {
+from {
+opacity:0;
+}
+to {
+opacity:1;
+}
+}
+@-webkit-keyframes fadeout {
+from {
+    opacity:1;
+}
+to {
+    opacity:0;
+}
 }
