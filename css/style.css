@@ -63,9 +63,14 @@ h5 > span{
   margin-top:-10px;
   padding-right:10px;
   background:none;
-  -webkit-animation:fadein 1s;
-  -webkit-animation:fadeout 1s;
-  -webkit-animation-delay:fadeout 1s;
+  -webkit-animation:fadein 2s;
+  -webkit-animation:fadeout 2s;
+  -webkit-animation-delay:fadeout 0s;
+}
+
+.btn-mybutt{
+  margin:5px;
+  border:1px solid grey;
 }
 
 @-webkit-keyframes fadein {

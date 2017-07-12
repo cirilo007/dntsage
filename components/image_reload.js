@@ -20,15 +20,12 @@ export default class ImageReload extends React.Component {
      }
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,2000);
+      this.tick,3000);
 
   }
   tick(){
 
     var self = this;
-
-    this.setState({showLoader: true});
-
     var xhr = new XMLHttpRequest();
     var imageid = "video_"+this.props.name;
     xhr.open('GET', this.props.url, true);
@@ -44,6 +41,7 @@ export default class ImageReload extends React.Component {
     }
 
     xhr.onload = function(e) {
+
       if (this.status === 200) {
         var uInt8Array = new Uint8Array(this.response);
         var i = uInt8Array.length;
@@ -59,13 +57,14 @@ export default class ImageReload extends React.Component {
         // get bytes and apply styles
         var bytes = xhr.getResponseHeader("content-length").toLowerCase();
         self.setState({bytes: bytes });
-
+        self.setState({showLoader: true });
         if (bytes < 7000){
 
         }
         else if (bytes > 7000 && bytes < 21500) {
-          self.setState({color: "holder bg-danger" });
-          self.setState({message: "No signal from HDMI" });
+          self.setState({
+            color: "holder bg-danger",
+            message: "No signal from HDMI" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else {
@@ -73,15 +72,11 @@ export default class ImageReload extends React.Component {
           self.setState({message: "OK" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
-
-
-
       }
-
     };
 
-    xhr.send();
     self.setState({showLoader: false });
+    xhr.send();
   }
   customBase64Encode (inputStr) {
       var
@@ -148,6 +143,8 @@ export default class ImageReload extends React.Component {
       }
       return output;
   }
+
+
   render() {
     var imageid = "video_"+this.props.name;
       return (
