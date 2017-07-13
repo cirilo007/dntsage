@@ -174,7 +174,7 @@ export default class ImageReload extends React.Component {
           <div className="text-center">
             <button className="close_modal" onClick={this.closeModal}>Close</button>
             <br />
-            <img src="img/no-connection.png" alt="" />
+            <img src={this.props.url + "?time="+new Date().getTime()} alt="" />
           </div>
         </Modal>
 

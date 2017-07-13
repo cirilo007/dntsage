@@ -74,7 +74,7 @@ export default class Videotest extends React.Component {
                     </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://192.168.0.18/img/home.jpg"
+                      url="http://192.168.0.18/img/home5.jpg"
                       name="1"
                       resMax = "29000"
                       resMin="26600"
@@ -82,7 +82,7 @@ export default class Videotest extends React.Component {
                   </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://192.168.0.18/img/home2.jpg"
+                      url="http://192.168.0.18/img/home4.jpg"
                       name="2"
                       resMax = "29000"
                       resMin="26600"
@@ -98,7 +98,7 @@ export default class Videotest extends React.Component {
                   </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://192.168.0.18/img/home4.jpg"
+                      url="http://192.168.0.18/img/home2.jpg"
                       name="4"
                       resMax = "29000"
                       resMin="26600"
@@ -106,7 +106,7 @@ export default class Videotest extends React.Component {
                   </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://192.168.0.18/img/home5.jpg"
+                      url="http://192.168.0.18/img/home.jpg"
                       name="5"
                       resMax = "29000"
                       resMin="26600"
@@ -120,7 +120,7 @@ export default class Videotest extends React.Component {
                     </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://192.168.0.17/img/home.jpg"
+                      url="http://192.168.0.17/img/home5.jpg"
                       name="6"
                       resMax = "29000"
                       resMin="26600"
@@ -128,7 +128,7 @@ export default class Videotest extends React.Component {
                   </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://192.168.0.17/img/home2.jpg"
+                      url="http://192.168.0.17/img/home4.jpg"
                       name="7"
                       resMax = "29000"
                       resMin="26600"
@@ -144,7 +144,7 @@ export default class Videotest extends React.Component {
                   </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://192.168.0.17/img/home4.jpg"
+                      url="http://192.168.0.17/img/home2.jpg"
                       name="9"
                       resMax = "29000"
                       resMin="26600"
@@ -152,7 +152,7 @@ export default class Videotest extends React.Component {
                   </ Col>
                   <Col sm={2}>
                     <ImageReload
-                      url="http://192.168.0.17/img/home5.jpg"
+                      url="http://192.168.0.17/img/home.jpg"
                       name="10"
                       resMax = "29000"
                       resMin="26600"
