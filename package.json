@@ -34,6 +34,7 @@
     "react-image": "^1.0.1",
     "react-image-file": "^0.1.0",
     "react-image-lightbox": "^4.1.0",
+    "react-modal": "^2.2.2",
     "react-sizeme": "^2.3.4",
     "react-timer": "^1.0.2",
     "style-loader": "^0.18.2",

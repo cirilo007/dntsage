@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Loader from '../components/image_loader.jsx';
+import Modal from 'react-modal'
 
 export default class ImageReload extends React.Component {
 
@@ -13,10 +14,13 @@ export default class ImageReload extends React.Component {
            color: "holder bg-black",
            bytes: "...",
            message: "Connecting...",
-           showLoader: false
+           showLoader: false,
+           modalopen: false
          };
          this.tick = this.tick.bind(this);
          this.componentDidMount = this.componentDidMount.bind(this);
+         this.openModal = this.openModal.bind(this);
+         this.closeModal = this.closeModal.bind(this)
      }
   componentDidMount() {
     this.interval = setInterval(
@@ -28,7 +32,7 @@ export default class ImageReload extends React.Component {
     var self = this;
     var xhr = new XMLHttpRequest();
     var imageid = "video_"+this.props.name;
-    xhr.open('GET', this.props.url, true);
+    xhr.open('GET', this.props.url + "?time="+new Date().getTime(), true);
     xhr.timeout = 1000,
     xhr.responseType = 'arraybuffer';
 
@@ -61,7 +65,7 @@ export default class ImageReload extends React.Component {
         if (bytes < 7000){
 
         }
-        else if (bytes > 7000 && bytes < 21500) {
+        else if (bytes > 7000 && bytes < 9500) {
           self.setState({
             color: "holder bg-danger",
             message: "No signal from HDMI" });
@@ -144,7 +148,12 @@ export default class ImageReload extends React.Component {
       return output;
   }
 
-
+  openModal() {
+      this.setState({modalopen: true});
+    }
+  closeModal() {
+      this.setState({modalopen: false});
+    }
   render() {
     var imageid = "video_"+this.props.name;
       return (
@@ -156,8 +165,19 @@ export default class ImageReload extends React.Component {
 
           <small className="timer"> Feed {this.state.bytes} kb </small>
           <div className="crop">
-            <img src="img/no-connection.png" id={imageid} className="img-responsive" alt={this.state.bytes} />
+            <img src="img/no-connection.png" id={imageid} className="img-responsive" alt={this.state.bytes} onClick={this.openModal} />
           </div>
+          <Modal
+            isOpen={this.state.modalopen}
+            contentLabel="Video Modal"
+          >
+          <div className="text-center">
+            <button className="close_modal" onClick={this.closeModal}>Close</button>
+            <br />
+            <img src="img/no-connection.png" alt="" />
+          </div>
+        </Modal>
+
       </div>
     );
   }
