@@ -24,7 +24,7 @@ export default class ImageReload extends React.Component {
      }
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,3000);
+      this.tick,2000);
 
   }
   tick(){
@@ -65,14 +65,20 @@ export default class ImageReload extends React.Component {
         if (bytes < 7000){
 
         }
-        else if (bytes > 7000 && bytes < 9500) {
+        else if (bytes > 7000 && bytes < 10000) {
           self.setState({
-            color: "holder bg-danger",
+          //  color: "holder bg-danger",
             message: "No signal from HDMI" });
-          document.getElementById(imageid).src="data:image/png;base64,"+base64;
+          document.getElementById(imageid).src="/img/no-signal.jpg";
+        }
+        else if (bytes > 60000) {
+          self.setState({
+          //  color: "holder bg-danger",
+            message: "No signal from HDMI" });
+          document.getElementById(imageid).src="/img/no-signal.jpg";
         }
         else {
-          self.setState({color: "holder bg-success" });
+          // self.setState({color: "holder bg-success" });
           self.setState({message: "OK" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
@@ -160,7 +166,7 @@ export default class ImageReload extends React.Component {
       <div className="bg-black">
         <h5>
           <span className={this.state.color}>#{this.props.name}</span> &nbsp;{this.state.message}
-            {this.state.showLoader ? <Loader /> : null}
+
         </h5>
 
           <small className="timer"> Feed {this.state.bytes} kb </small>
