@@ -11,7 +11,8 @@
       port: 8080
    },
    node: {
-      fs: 'empty'
+      fs: 'empty',
+      child_process: 'empty'
     },
 
    module: {

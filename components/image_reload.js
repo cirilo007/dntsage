@@ -15,7 +15,8 @@ export default class ImageReload extends React.Component {
            bytes: "...",
            message: "Connecting...",
            showLoader: false,
-           modalopen: false
+           modalopen: false,
+           feedimage: '/img/ajax-loader.gif'
          };
          this.tick = this.tick.bind(this);
          this.componentDidMount = this.componentDidMount.bind(this);
@@ -24,7 +25,7 @@ export default class ImageReload extends React.Component {
      }
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,2000);
+      this.tick,1000);
 
   }
   tick(){
@@ -65,17 +66,19 @@ export default class ImageReload extends React.Component {
         if (bytes < 7000){
 
         }
-        else if (bytes > 7000 && bytes < 10000) {
+        else if (bytes > 7000 && bytes < 12000) {
           self.setState({
           //  color: "holder bg-danger",
             message: "No signal from HDMI" });
-          document.getElementById(imageid).src="/img/no-signal.jpg";
+            document.getElementById(imageid).src="/img/no-signal.jpg";
+//            document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else if (bytes > 60000) {
           self.setState({
           //  color: "holder bg-danger",
             message: "No signal from HDMI" });
-          document.getElementById(imageid).src="/img/no-signal.jpg";
+            document.getElementById(imageid).src="/img/no-signal.jpg";
+//            document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else {
           // self.setState({color: "holder bg-success" });
@@ -155,13 +158,34 @@ export default class ImageReload extends React.Component {
   }
 
   openModal() {
+      var xhr = new XMLHttpRequest();
+      var ipaddress = this.props.url.split("/");
+      xhr.open('GET', "http://" + ipaddress[2] + "/action.php?action=stream&feed=" + ipaddress[4].slice(0, -4), true);
+      xhr.send();
       this.setState({modalopen: true});
+      var self = this;
+      setTimeout(function() {
+            self.setState({feedimage: "http://" + ipaddress[2] + ":8080/?action=stream"});
+        }, 3000);
+
+      this.openModal = this.openModal.bind(this);
+
     }
   closeModal() {
-      this.setState({modalopen: false});
+      var xhr = new XMLHttpRequest();
+      var ipaddress = this.props.url.split("/");
+      xhr.open('GET', "http://" + ipaddress[2] + "/action.php?action=stop-stream", true);
+      xhr.send();
+      this.setState({
+        modalopen: false,
+        feedimage: '/img/ajax-loader.gifx'
+      });
     }
+
   render() {
     var imageid = "video_"+this.props.name;
+    var ipaddress = this.props.url.split("/");
+
       return (
       <div className="bg-black">
         <h5>
@@ -174,13 +198,14 @@ export default class ImageReload extends React.Component {
             <img src="img/no-connection.png" id={imageid} className="img-responsive" alt={this.state.bytes} onClick={this.openModal} />
           </div>
           <Modal
+            onAfterOpen={this.getFeed}
             isOpen={this.state.modalopen}
             contentLabel="Video Modal"
           >
           <div className="text-center">
             <button className="close_modal" onClick={this.closeModal}>Close</button>
             <br />
-            <img src={this.props.url + "?time="+new Date().getTime()} alt="" />
+            <img src={this.state.feedimage} alt="" />
           </div>
         </Modal>
 

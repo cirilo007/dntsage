@@ -14,9 +14,15 @@ export default class ButtonAction extends React.Component {
 
   sendCommand(e) {
     alert("boom");
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'http://192.168.0.100/'+this.props.script, true);
-      xhr.send();
+
+    var sys = require('sys');
+    var exec = require('child_process').exec;
+    function puts(error, stdout, stderr) { sys.puts(stdout) }
+    exec("sudo sh /home/pi/lirc_01.sh", puts);
+
+    //  var xhr = new XMLHttpRequest();
+    //  xhr.open('GET', 'http://10.0.0.12/'+this.props.script, true);
+    //  xhr.send();
   }
 
   render() {
