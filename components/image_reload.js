@@ -178,9 +178,12 @@ export default class ImageReload extends React.Component {
       xhr.send();
       this.setState({
         modalopen: false,
-        feedimage: '/img/ajax-loader.gifx'
+        feedimage: '/img/ajax-loader.gif'
       });
     }
+
+
+
 
   render() {
     var imageid = "video_"+this.props.name;
