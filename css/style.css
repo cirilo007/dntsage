@@ -7,6 +7,10 @@ img{
   position:relative;
 }
 
+h2{
+  color:#fff;
+}
+
 h5{
   padding:15px 0 0 0;
   vertical-align: middle;
@@ -64,6 +68,16 @@ h5 > span{
   -webkit-animation:fadein 2s;
   -webkit-animation:fadeout 2s;
   -webkit-animation-delay:fadeout 0s;
+}
+
+.monitor{
+  z-index:1000;
+  position:absolute;
+  height:800px;
+}
+.monitor_image{
+  padding-top:30px;
+  padding-left:40px;
 }
 
 .btn-mybutt{

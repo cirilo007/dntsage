@@ -12,11 +12,13 @@
   "dependencies": {
     "es2015": "0.0.0",
     "fs": "0.0.1-security",
+    "oscilloscope": "^1.0.0",
     "react-audio-visualizer": "^1.0.3",
     "react-bootstrap": "^0.31.0",
     "react-fontawesome": "^1.6.1",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "react-videojs": "0.0.3"
   },
   "devDependencies": {
     "babel": "^6.23.0",
