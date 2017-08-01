@@ -27,7 +27,7 @@ export default class ImageReload extends React.Component {
      }
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,1000);
+      this.tick,2000);
 
   }
   tick(){
@@ -36,7 +36,7 @@ export default class ImageReload extends React.Component {
     var xhr = new XMLHttpRequest();
     var imageid = "video_"+this.props.name;
     xhr.open('GET', this.props.url + "?time="+new Date().getTime(), true);
-    xhr.timeout = 1000,
+    xhr.timeout = 1500,
     xhr.responseType = 'arraybuffer';
 
     xhr.ontimeout = function(e) {
