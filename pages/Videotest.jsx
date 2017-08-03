@@ -19,35 +19,18 @@ export default class Videotest extends React.Component {
    render() {
       return (
         <div>
-            <div>
               <Grid fluid>
+                <Row className="header">
+                  <Col sm={12}>
+                    <img src="/img/logo2.png" />
+                  </ Col>
+                </Row>
                 <Row>
-                  <Col sm={1}>
+                  <Col sm={12} className="text-right">
+                      <Timer options={OPTIONS} />
                   </Col>
-                  <Col sm={3}>
-                    <img src="/img/logo.png" />
-                  </ Col>
-                  <Col sm={4}>
-
-
-                  </ Col>
-                  <Col sm={3}>
-                    <Grid>
-                      <Row>
-                        <Col sm={6}>
-                          <Timer options={OPTIONS} />
-                        </Col>
-                        <Col sm={6}>
-
-                        </Col>
-                      </Row>
-                    </Grid>
-
-                  </ Col>
-                  <Col sm={1}>
-                  </Col>
-                </ Row>
-                  <Row>
+                </Row>
+                <Row>
                     <Col sm={1}>
                     </Col>
                     <Col sm={10}>
@@ -67,7 +50,7 @@ export default class Videotest extends React.Component {
                 <Row>
                   <Col sm={1}>
                     </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.14/img/feed05.jpg"
                       name="1"
@@ -75,7 +58,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.14/img/feed04.jpg"
                       name="2"
@@ -83,7 +66,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.14/img/feed03.jpg"
                       name="3"
@@ -91,7 +74,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.14/img/feed02.jpg"
                       name="4"
@@ -99,7 +82,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.14/img/feed01.jpg"
                       name="5"
@@ -108,12 +91,6 @@ export default class Videotest extends React.Component {
                       />
                   </ Col>
                   <Col sm={1}>
-                    </ Col>
-                </ Row>
-                <Row>
-                  <Col sm={1}>
-                    </ Col>
-                  <Col sm={2}>
                     <ImageReload
                       url="http://10.0.0.13/img/feed06.jpg"
                       name="6"
@@ -121,7 +98,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.13/img/feed07.jpg"
                       name="7"
@@ -129,7 +106,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.13/img/feed08.jpg"
                       name="8"
@@ -137,7 +114,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.13/img/feed09.jpg"
                       name="9"
@@ -145,7 +122,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://10.0.0.13/img/feed10.jpg"
                       name="10"
@@ -157,9 +134,94 @@ export default class Videotest extends React.Component {
                     </ Col>
 
                 </Row>
+                <Row>
+                  <Col sm={1}>
+                    </ Col>
+                  <Col sm={1}>
+                    <ImageReload
+                      url="http://10.0.0.12/img/feed11.jpg"
+                      name="11"
+                      resMax = "29000"
+                      resMin="26600"
+                      />
+                  </ Col>
+                  <Col sm={1}>
+                    <ImageReload
+                      url="http://10.0.0.12/img/feed12.jpg"
+                      name="12"
+                      resMax = "29000"
+                      resMin="26600"
+                      />
+                  </ Col>
+                  <Col sm={1}>
+                    <ImageReload
+                      url="http://10.0.0.12/img/feed13.jpg"
+                      name="13"
+                      resMax = "29000"
+                      resMin="26600"
+                      />
+                  </ Col>
+                  <Col sm={1}>
+                    <ImageReload
+                      url="http://10.0.0.12/img/feed14.jpg"
+                      name="14"
+                      resMax = "29000"
+                      resMin="26600"
+                      />
+                  </ Col>
+                  <Col sm={1}>
+                    <ImageReload
+                      url="http://10.0.0.12/img/feed15.jpg"
+                      name="15"
+                      resMax = "29000"
+                      resMin="26600"
+                      />
+                  </ Col>
+                  <Col sm={1}>
+                    <ImageReload
+                      url="http://10.0.0.10/img/feed16.jpg"
+                      name="16"
+                      resMax = "29000"
+                      resMin="26600"
+                      />
+                  </ Col>
+                  <Col sm={1}>
+                    <ImageReload
+                      url="http://10.0.0.10/img/feed17.jpg"
+                      name="17"
+                      resMax = "29000"
+                      resMin="26600"
+                      />
+                  </ Col>
+                  <Col sm={1}>
+                    <ImageReload
+                      url="http://10.0.0.10/img/feed18.jpg"
+                      name="18"
+                      resMax = "29000"
+                      resMin="26600"
+                      />
+                  </ Col>
+                  <Col sm={1}>
+                    <ImageReload
+                      url="http://10.0.0.10/img/feed19.jpg"
+                      name="19"
+                      resMax = "29000"
+                      resMin="26600"
+                      />
+                  </ Col>
+                  <Col sm={1}>
+                    <ImageReload
+                      url="http://10.0.0.10/img/feed20.jpg"
+                      name="20"
+                      resMax = "29000"
+                      resMin="26600"
+                      />
+                  </ Col>
+                  <Col sm={1}>
+                    </ Col>
+                </ Row>
 
               </Grid>
-            </div>
        </div>
       );
    }
