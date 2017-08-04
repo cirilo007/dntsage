@@ -5,6 +5,7 @@ body{
 img{
   max-height:230px;
   position:relative;
+  padding:10px;
 }
 
 h2{
