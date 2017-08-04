@@ -99,6 +99,11 @@ padding:20px;
   right:10px;
 }
 
+.react-timer{
+  font-size: 10px;
+}
+
+
 @-webkit-keyframes fadein {
 from {
 opacity:0;
