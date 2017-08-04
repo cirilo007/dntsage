@@ -5,7 +5,7 @@ body{
 img{
   max-height:230px;
   position:relative;
-  padding:10px;
+  padding:20px;
 }
 
 h2{
@@ -15,8 +15,8 @@ h2{
 h5{
   padding:0;
   position:absolute;
-  top:15px;
-  left:15px;
+  top:25px;
+  left:35px;
   z-index:1000;
 }
 h5 > span{
@@ -46,7 +46,6 @@ padding:20px;
 }
 .bg-black{
   color:white;
-  margin-top:10px;
 }
 .bg-danger{
   background:red;
@@ -65,9 +64,9 @@ padding:20px;
 }
 .timer{
   position:absolute;
-  bottom:25px;
+  bottom:45px;
   background:rgba(0,0,0,0.5);
-  left:20px;
+  left:40px;
   padding:3px;
   border-radius: 5px;
   z-index:10000;
