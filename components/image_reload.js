@@ -225,8 +225,8 @@ export default class ImageReload extends React.Component {
           <span>{this.props.name}</span>
         </h5>
         <small className="timer"> Feed {this.state.bytes} b </small>
-        <div className="crop">
-          <img src="img/no-connection.png" id={imageid} className="img-responsive" alt={this.state.bytes} onClick={this.openModal} />
+        <div>
+          <img src="img/no-connection.png" id={imageid} className="" alt={this.state.bytes} onClick={this.openModal} />
         </div>
         <Modal
           onAfterOpen={this.getFeed}

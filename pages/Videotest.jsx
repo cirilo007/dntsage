@@ -18,7 +18,7 @@ let OPTIONS = { prefix: 'seconds elapsed!', delay: 100};
 export default class Videotest extends React.Component {
    render() {
       return (
-        <div>
+        <div className="wrapper">
               <Grid fluid>
                 <Row className="header">
                   <Col sm={6}>
@@ -37,7 +37,6 @@ export default class Videotest extends React.Component {
               </ Grid>
 
               <Grid fluid >
-
                 <Row>
                   <Col sm={2} smOffset={1}>
                     <ImageReload

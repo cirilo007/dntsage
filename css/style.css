@@ -3,7 +3,7 @@ body{
 }
 
 img{
-  height:100%;
+  max-height:250px;
   position:relative;
 }
 
@@ -45,8 +45,7 @@ padding:20px;
 }
 .bg-black{
   color:white;
-  background: #666;
-  margin-bottom:40px;
+  margin-bottom:0px;
 }
 .bg-danger{
   background:red;
@@ -65,9 +64,9 @@ padding:20px;
 }
 .timer{
   position:absolute;
-  bottom:45px;
+  bottom:25px;
   background:rgba(0,0,0,0.5);
-  right:20px;
+  left:20px;
   padding:3px;
   border-radius: 5px;
   z-index:10000;
@@ -109,7 +108,7 @@ padding:20px;
 }
 
 .react-timer{
-  font-size: 10px;
+  font-size: 8px;
 }
 
 
