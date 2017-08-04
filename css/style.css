@@ -94,7 +94,9 @@ padding:20px;
   padding-top:30px;
   padding-left:40px;
 }
-
+.ReactModal__Overlay{
+  z-index:1000000000;
+}
 .btn-mybutt{
   margin:5px;
   border:1px solid grey;

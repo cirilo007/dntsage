@@ -222,7 +222,7 @@ export default class ImageReload extends React.Component {
       return (
       <div className="bg-black">
         <h5>
-          <span>#{this.props.name}</span>
+          <span>{this.props.name}</span>
         </h5>
         <small className="timer"> Feed {this.state.bytes} b </small>
         <div className="crop">
