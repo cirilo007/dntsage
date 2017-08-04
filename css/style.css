@@ -12,8 +12,11 @@ h2{
 }
 
 h5{
-  padding:15px 0 0 0;
-  vertical-align: middle;
+  padding:0;
+  position:absolute;
+  top:5px;
+  left:15px;
+  z-index:1000;
 }
 h5 > span{
   font-size:20px;
@@ -21,7 +24,8 @@ h5 > span{
   margin-top:-15px;
   float:left;
   padding:10px;
-  background:#212121;
+  background:rgba(0,0,0,0.5);
+
 }
 
 .header{
@@ -42,6 +46,7 @@ padding:20px;
 .bg-black{
   color:white;
   background: #666;
+  margin-bottom:40px;
 }
 .bg-danger{
   background:red;
@@ -60,11 +65,13 @@ padding:20px;
 }
 .timer{
   position:absolute;
-  top:20px;
-  background:rgba(255,255,255,0.5);
+  bottom:45px;
+  background:rgba(0,0,0,0.5);
   right:20px;
   padding:3px;
   border-radius: 5px;
+  z-index:10000;
+  font-size:9px;
 }
 
 .image_reloader{

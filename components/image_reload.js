@@ -222,31 +222,26 @@ export default class ImageReload extends React.Component {
       return (
       <div className="bg-black">
         <h5>
-          <span className={this.state.color}>#{this.props.name}</span> &nbsp;{this.state.message}
-
+          <span>#{this.props.name}</span>
         </h5>
-
-          <small className="timer"> Feed {this.state.bytes} kb </small>
-          <div className="crop">
-            <img src="img/no-connection.png" id={imageid} className="img-responsive" alt={this.state.bytes} onClick={this.openModal} />
-          </div>
-          <Modal
-            onAfterOpen={this.getFeed}
-            isOpen={this.state.modalopen}
-            contentLabel="Video Modal"
-            style={modalstyle}
-          >
-          <div className="text-center">
-            <button className="close_modal" onClick={this.closeModal}>Close</button>
-            <br />
-            <h2>{this.state.modaltitle}</h2>
-            <img src="img/monitor.png" className="monitor" width="800" height="300" />
-            <img src={this.state.feedimage} alt="" className="monitor_image"/>
-
-
-
-          </div>
-        </Modal>
+        <small className="timer"> Feed {this.state.bytes} b </small>
+        <div className="crop">
+          <img src="img/no-connection.png" id={imageid} className="img-responsive" alt={this.state.bytes} onClick={this.openModal} />
+        </div>
+        <Modal
+          onAfterOpen={this.getFeed}
+          isOpen={this.state.modalopen}
+          contentLabel="Video Modal"
+          style={modalstyle}
+        >
+        <div className="text-center">
+          <button className="close_modal" onClick={this.closeModal}>Close</button>
+          <br />
+          <h2>{this.state.modaltitle}</h2>
+          <img src="img/monitor.png" className="monitor" width="800" height="300" />
+          <img src={this.state.feedimage} alt="" className="monitor_image"/>
+        </div>
+      </Modal>
 
       </div>
     );

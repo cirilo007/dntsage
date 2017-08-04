@@ -39,8 +39,9 @@ export default class Videotest extends React.Component {
               <Grid fluid >
 
                 <Row>
-
-                  <Col sm={2}>
+                  <Col sm={1}>
+                  </Col>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.101/img/feed05.jpg"
                       name="1"
@@ -48,7 +49,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.101/img/feed04.jpg"
                       name="2"
@@ -56,7 +57,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.101/img/feed03.jpg"
                       name="3"
@@ -64,7 +65,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.101/img/feed02.jpg"
                       name="4"
@@ -72,7 +73,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.101/img/feed01.jpg"
                       name="5"
@@ -80,7 +81,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.102/img/feed06.jpg"
                       name="6"
@@ -88,7 +89,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.102/img/feed07.jpg"
                       name="7"
@@ -96,7 +97,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.102/img/feed08.jpg"
                       name="8"
@@ -104,7 +105,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.102/img/feed09.jpg"
                       name="9"
@@ -112,7 +113,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.102/img/feed10.jpg"
                       name="10"
@@ -120,7 +121,13 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col sm={1}>
+                  </Col>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.103/img/feed11.jpg"
                       name="11"
@@ -128,7 +135,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.103/img/feed12.jpg"
                       name="12"
@@ -136,7 +143,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.103/img/feed13.jpg"
                       name="13"
@@ -144,7 +151,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.103/img/feed14.jpg"
                       name="14"
@@ -152,7 +159,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.103/img/feed15.jpg"
                       name="15"
@@ -160,7 +167,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.104/img/feed16.jpg"
                       name="16"
@@ -168,7 +175,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.104/img/feed17.jpg"
                       name="17"
@@ -176,7 +183,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.104/img/feed18.jpg"
                       name="18"
@@ -184,7 +191,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.104/img/feed19.jpg"
                       name="19"
@@ -192,7 +199,7 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
-                  <Col sm={2}>
+                  <Col sm={1}>
                     <ImageReload
                       url="http://192.168.1.104/img/feed20.jpg"
                       name="20"
@@ -200,6 +207,8 @@ export default class Videotest extends React.Component {
                       resMin="26600"
                       />
                   </ Col>
+                  <Col sm={1}>
+                  </Col>
                 </ Row>
 
               </Grid>
