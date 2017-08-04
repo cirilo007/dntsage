@@ -43,7 +43,7 @@ export default class ImageReload extends React.Component {
       self.setState({color: "holder bg-black" });
       self.setState({message: "Timeout, reconnecting..." });
       self.setState({bytes: "0" });
-      document.getElementById(imageid).src="/img/no-connection.png";
+      document.getElementById(imageid).src="/img/ajax-loader.gif";
 
     }
 
