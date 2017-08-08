@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SerialForm extends React.Component {
+export default class SerialForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -20,12 +20,10 @@ class SerialForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Serial Number:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+      <form className="form_serial" onSubmit={this.handleSubmit}>
+        <label className="input_wrapper">
+          <input type="text" value={this.state.value} onChange={this.handleChange} autoFocus />
         </label>
-        <input type="submit" value="Submit" />
       </form>
     );
   }

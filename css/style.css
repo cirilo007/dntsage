@@ -1,15 +1,21 @@
 body{
   background:#fff;
+  font-family: 'Roboto',arial,sans-serif;
 }
 
-img{
+img.livefeed{
   max-height:230px;
   position:relative;
   padding:20px;
 }
 
-h2{
-  color:#fff;
+h1{
+  padding:20px;
+  border-bottom:1px dashed #ccc;
+}
+
+h1,h2{
+  color:#1A305F;
 }
 
 h5{
@@ -30,12 +36,43 @@ h5 > span{
 }
 
 .header{
-display:none;
 background:#f2f2f2;
 border-bottom:1px solid #ccc;
 padding:20px;
-
+display: none;
 }
+.logo{
+  height:40px;
+  margin-top:-10px;
+}
+
+
+.navbar-nav{
+}
+.navbar a{
+  color:#212121;
+  text-transform: uppercase;
+  font-size:13px;
+}
+
+.navbar a i{
+  color:#000;
+}
+
+
+.form_serial{
+  text-align: center;
+}
+.input_wrapper{
+  background:#ffcc99;
+  padding:50px;
+  border-radius: 50px;
+}
+
+.input_wrapper input{
+  font-size:30px;
+}
+
 .col-sm-2{
   padding-bottom:20px;
 }

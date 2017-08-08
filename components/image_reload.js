@@ -30,6 +30,9 @@ export default class ImageReload extends React.Component {
       this.tick,2000);
 
   }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
   tick(){
 
     var self = this;
@@ -186,10 +189,6 @@ export default class ImageReload extends React.Component {
         feedimage: '/img/ajax-loader.gif'
       });
     }
-
-
-
-
   render() {
     var imageid = "video_"+this.props.name;
     var ipaddress = this.props.url.split("/");
@@ -226,7 +225,7 @@ export default class ImageReload extends React.Component {
         </h5>
         <small className="timer"> Feed {this.state.bytes} b </small>
         <div>
-          <img src="img/no-connection.png" id={imageid} className="" alt={this.state.bytes} onClick={this.openModal} />
+          <img src="img/no-connection.png" id={imageid} className="livefeed" alt={this.state.bytes} onClick={this.openModal} />
         </div>
         <Modal
           onAfterOpen={this.getFeed}
