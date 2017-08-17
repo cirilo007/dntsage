@@ -45,7 +45,7 @@ export default class SerialForm extends React.Component {
   }
 
   handleSubmit(event) {
-    if(isNaN(this.state.value)){
+    if(isNaN(this.state.value.substr(1))){
       this.setState({
         formstyle: "form_serial_red",
         value: "",
