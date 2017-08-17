@@ -38,7 +38,10 @@ export default class Videotest extends React.Component {
 
               <Grid fluid >
                 <Row>
-                  <Col sm={2} smOffset={1}>
+                  <Col sm={1}>
+                    <h3>Pi-1</h3>
+                  </Col>
+                  <Col sm={2}>
                     <ImageReload
                       url="http://192.168.1.101/img/feed01.jpg"
                       name="1"
@@ -80,7 +83,10 @@ export default class Videotest extends React.Component {
                   </ Col>
                 </Row>
                 <Row>
-                  <Col sm={2} smOffset={1}>
+                  <Col sm={1}>
+                    <h3>Pi-2</h3>
+                  </Col>
+                  <Col sm={2}>
                     <ImageReload
                       url="http://192.168.1.102/img/feed06.jpg"
                       name="6"
@@ -122,7 +128,10 @@ export default class Videotest extends React.Component {
                   </ Col>
                 </Row>
                 <Row>
-                  <Col sm={2} smOffset={1}>
+                  <Col sm={1}>
+                    <h3>Pi-3</h3>
+                  </Col>
+                  <Col sm={2}>
                     <ImageReload
                       url="http://192.168.1.103/img/feed11.jpg"
                       name="11"
@@ -164,7 +173,10 @@ export default class Videotest extends React.Component {
                   </ Col>
                 </Row>
                 <Row>
-                  <Col sm={2} smOffset={1}>
+                  <Col sm={1}>
+                    <h3>Pi-4</h3>
+                  </Col>
+                  <Col sm={2}>
                     <ImageReload
                       url="http://192.168.1.104/img/feed16.jpg"
                       name="16"

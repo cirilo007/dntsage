@@ -34,7 +34,6 @@ export default class ImageReload extends React.Component {
     clearInterval(this.interval);
   }
   tick(){
-
     var self = this;
     var xhr = new XMLHttpRequest();
     var imageid = "video_"+this.props.name;
@@ -68,10 +67,10 @@ export default class ImageReload extends React.Component {
         var bytes = xhr.getResponseHeader("content-length").toLowerCase();
         self.setState({bytes: bytes });
         self.setState({showLoader: true });
-        if (bytes < 7000){
+        if (bytes < 4000){
 
         }
-        else if (bytes > 7000 && bytes < 12000) {
+        else if (bytes > 4000 && bytes < 12000) {
           self.setState({
           //  color: "holder bg-danger",
             message: "No signal from HDMI" });
