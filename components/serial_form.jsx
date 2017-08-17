@@ -13,14 +13,7 @@ export default class SerialForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
-    }
-  }
+
   componentDidMount() {
     var that = this;
     var url = 'http://192.168.1.105/api/api.php/products?columns=id_prod,product_name';
@@ -45,6 +38,7 @@ export default class SerialForm extends React.Component {
   }
 
   handleSubmit(event) {
+
     if(isNaN(this.state.value.substr(1))){
       this.setState({
         formstyle: "form_serial_red",
@@ -58,47 +52,59 @@ export default class SerialForm extends React.Component {
                 value: "",
                 title_result: "Scan product",
                 disabled: !this.state.disabled
-              })
-          }, 1000)
-      return false;
-    }
-    var that = this;
-    var url = 'http://192.168.1.105/api/api.php/serials';
-    fetch(url, {
-      method: 'post',
-      body: JSON.stringify({id_serial: '', serial_number: this.state.value})
-  })
-    .then(res=> res.json()
-    )
-    .then(json => {
-      if(json > 1){
-        this.setState({
-          formstyle: "form_serial_green",
-          value: this.state.value,
-          title_result: "Serial Number inserted",
-          disabled: !this.state.disabled
-        });
-      } else{
-        this.setState({
-          formstyle: "form_serial_red",
-          value: this.state.value,
-          title_result: "Serial Number already exists",
-          disabled: !this.state.disabled
-        });
-      }
-      console.log(json);
+              });
+              this.serial_input.focus();
+          }, 1000);
 
-
+          return false;
       }
-    )
-    .then(setTimeout(() => {
-            this.setState({
-              formstyle: "form_serial",
-              value: "",
-              title_result: "Scan product",
+
+        var that = this;
+        var url = 'http://192.168.1.105/api/api.php/serials';
+        fetch(url, {
+          method: 'post',
+          body: JSON.stringify({id_serial: '', serial_number: this.state.value})
+        })
+        .then(res=>res.text())
+        .then(result=>{
+          if(result > 1){
+            that.setState({
+              formstyle: "form_serial_green",
+              value: this.state.value,
+              title_result: "Serial Number inserted",
               disabled: !this.state.disabled
-            })
-        }, 2000))
+            });
+            setTimeout(() => {
+                    this.setState({
+                      formstyle: "form_serial",
+                      value: "",
+                      title_result: "Scan product",
+                      disabled: !this.state.disabled
+                    });
+                    this.serial_input.focus();
+                }, 1000);
+            } else {
+              that.setState({
+                formstyle: "form_serial_red",
+                value: this.state.value,
+                title_result: "Serial Number duplicated",
+                disabled: !this.state.disabled
+              });
+              setTimeout(() => {
+                      this.setState({
+                        formstyle: "form_serial",
+                        value: "",
+                        title_result: "Scan product",
+                        disabled: !this.state.disabled
+                      });
+                      this.serial_input.focus();
+                  }, 1000);
+            }
+          }
+        )
+
+
+
 
   }
 
@@ -116,10 +122,12 @@ export default class SerialForm extends React.Component {
 
     return (
 
-      <form id="serial_input" className={this.state.formstyle} onSubmit={this.handleSubmit}>
+      <form id="serial_form" className={this.state.formstyle} onSubmit={this.handleSubmit}>
         <h2>{this.state.title_result}</h2>
         <label className="input_wrapper">
-          <input type="text" value={this.state.value} onChange={this.handleChange} autoFocus disabled = {(this.state.disabled)? "disabled" : ""} />
+          <input
+          ref={(input) => { this.serial_input = input; }}
+          type="text" value={this.state.value} onChange={this.handleChange} autoFocus disabled = {(this.state.disabled)? "disabled" : ""} />
         </label>
       </form>
     );
