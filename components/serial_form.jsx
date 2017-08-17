@@ -6,7 +6,8 @@ export default class SerialForm extends React.Component {
     this.state = {
       products: [],
       value: '',
-      formstyle: "form_serial"
+      formstyle: "form_serial",
+      disabled: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -40,7 +41,6 @@ export default class SerialForm extends React.Component {
 
   handleChange(event) {
     this.setState({value: event.target.value});
-      this.setState({formstyle: "form_serial",title_result: "Scan product"});
 
   }
 
@@ -48,14 +48,16 @@ export default class SerialForm extends React.Component {
     if(isNaN(this.state.value.substr(1))){
       this.setState({
         formstyle: "form_serial_red",
-        value: "",
-        title_result: "Serial Number should only contain numeric values"
+        value: this.state.value,
+        title_result: "Serial Number should only contain numeric values",
+        disabled: !this.state.disabled
       });
       setTimeout(() => {
               this.setState({
                 formstyle: "form_serial",
                 value: "",
-                title_result: "Scan product"
+                title_result: "Scan product",
+                disabled: !this.state.disabled
               })
           }, 1000)
       return false;
@@ -65,19 +67,36 @@ export default class SerialForm extends React.Component {
     fetch(url, {
       method: 'post',
       body: JSON.stringify({id_serial: '', serial_number: this.state.value})
-  }).then(res=>res.json())
-    .then(
-          this.setState({
-            formstyle: "form_serial_green",
-            value: this.state.value,
-            title_result: "Serial Number inserted"
-        })
+  })
+    .then(res=> res.json()
+    )
+    .then(json => {
+      if(json > 1){
+        this.setState({
+          formstyle: "form_serial_green",
+          value: this.state.value,
+          title_result: "Serial Number inserted",
+          disabled: !this.state.disabled
+        });
+      } else{
+        this.setState({
+          formstyle: "form_serial_red",
+          value: this.state.value,
+          title_result: "Serial Number already exists",
+          disabled: !this.state.disabled
+        });
+      }
+      console.log(json);
+
+
+      }
     )
     .then(setTimeout(() => {
             this.setState({
               formstyle: "form_serial",
               value: "",
-              title_result: "Scan product"
+              title_result: "Scan product",
+              disabled: !this.state.disabled
             })
         }, 2000))
 
@@ -100,7 +119,7 @@ export default class SerialForm extends React.Component {
       <form id="serial_input" className={this.state.formstyle} onSubmit={this.handleSubmit}>
         <h2>{this.state.title_result}</h2>
         <label className="input_wrapper">
-          <input type="text" value={this.state.value} onChange={this.handleChange} autoFocus />
+          <input type="text" value={this.state.value} onChange={this.handleChange} autoFocus disabled = {(this.state.disabled)? "disabled" : ""} />
         </label>
       </form>
     );

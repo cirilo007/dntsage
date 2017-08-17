@@ -51,12 +51,18 @@ export default class ListItems extends React.Component {
                  </a>
                </td>
                <td>
-                 <i className="fa fa-trash"></i>
-               </td>
+                 <a href="">
+                   <i className="fa fa-trash"></i>
+                   </a>
+              </td>
              </tr>
       });
     } else {
-      content = 'waiting for data';
+      content = <tr>
+              <td colSpan={4} className="text-center">
+                  Waiting for data...
+              </td>
+            </tr>;
     }
 
     return (
