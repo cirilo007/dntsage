@@ -69,7 +69,7 @@ export default class SerialForm extends React.Component {
     .then(
           this.setState({
             formstyle: "form_serial_green",
-            value: "",
+            value: this.state.value,
             title_result: "Serial Number inserted"
         })
     )
