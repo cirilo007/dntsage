@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from '../components/header.js';
 import Footer from '../components/footer.js';
-import VideotestSetup from '../pages/videotestsetup.jsx';
-import Videotester from '../pages/videotester.jsx';
+import VideotestSetup from '../pages/Videotestsetup.jsx';
+import Videotester from '../pages/Videotester.jsx';
 
 //import { DefaultPlayer as Video } from 'react-html5video';
 
