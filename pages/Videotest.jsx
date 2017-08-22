@@ -23,14 +23,16 @@ export default class Videotest extends React.Component {
 
    render() {
 
-     var content = <VideotestSetup />
+     var content = <div>
+                    <VideotestSetup /><Videotester />
+                  </div>
 
       return (
           <div className="wrapper">
             <Grid fluid>
               <Row className="header">
                 <Col sm={12}>
-                  <a href="#" onClick={this.gotostep}>Step1</a> | <a href="#" onClick={this.gotostep}>Step2</a> | <a href="#" onClick={this.gotostep}>Step3</a>
+                  <a href="#" key="1" onClick={this.onClick}>Step1</a> | <a href="#" key="2" onClick={this.onClick}>Step2</a> | <a href="#" key="3" onClick={this.onClick}>Step3</a>
                 </Col>
                 <Col sm={12}>
                   {content}
@@ -42,9 +44,10 @@ export default class Videotest extends React.Component {
       );
    }
 
-   gotostep(e){
-     e.preventDefault();
-     console.log("get to step:");
+   onClick(item,e){
+
+     console.log(e);
+     item.preventDefault();
    }
 
 }
