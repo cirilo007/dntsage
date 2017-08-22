@@ -5,6 +5,7 @@ import Footer from '../components/footer.js';
 import ImageReload from '../components/image_reload.js';
 import ButtonAction from '../components/button_action.jsx';
 import Timer from 'react-timer';
+import Switch from 'react-bootstrap-switch';
 
 
 
@@ -21,17 +22,25 @@ export default class Videotest extends React.Component {
         <div className="wrapper">
               <Grid fluid>
                 <Row className="header">
-                  <Col sm={6}>
-                    <img src="/img/logo2.png" />
-                    <br />
+                  <Col sm={1}>
+                  </Col>
+                  <Col sm={5}>
                     <ButtonAction
                           name = "Portal upgrade"
                           script = "lirc_01.php"
                           ico = "cloud-download"
                     />
+
                   </ Col>
-                  <Col sm={6}>
-                    <Timer options={OPTIONS} />
+                  <Col sm={5} className="text-right">
+                    <Switch
+                      onColor = "danger"
+                      offColor = "warning"
+                      onText ="HDMI"
+                      offText ="RCA"
+                      />
+                  </Col>
+                  <Col sm={1}>
                   </Col>
                 </Row>
               </ Grid>

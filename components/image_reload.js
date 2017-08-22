@@ -27,7 +27,7 @@ export default class ImageReload extends React.Component {
      }
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,2000);
+      this.tick,3000);
 
   }
   componentWillUnmount() {
@@ -67,10 +67,10 @@ export default class ImageReload extends React.Component {
         var bytes = xhr.getResponseHeader("content-length").toLowerCase();
         self.setState({bytes: bytes });
         self.setState({showLoader: true });
-        if (bytes < 4000){
+        if (bytes < 7000){
 
         }
-        else if (bytes > 4000 && bytes < 12000) {
+        else if (bytes > 7000 && bytes < 12000) {
           self.setState({
           //  color: "holder bg-danger",
             message: "No signal from HDMI" });
@@ -81,8 +81,8 @@ export default class ImageReload extends React.Component {
           self.setState({
           //  color: "holder bg-danger",
             message: "No signal from HDMI" });
-            document.getElementById(imageid).src="/img/no-signal.jpg";
-//            document.getElementById(imageid).src="data:image/png;base64,"+base64;
+//            document.getElementById(imageid).src="/img/no-signal.jpg";
+            document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else {
           // self.setState({color: "holder bg-success" });

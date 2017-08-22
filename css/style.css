@@ -41,7 +41,6 @@ h5 > span{
 background:#f2f2f2;
 border-bottom:1px solid #ccc;
 padding:20px;
-display: none;
 }
 .logo{
   height:40px;
@@ -72,7 +71,7 @@ display: none;
 .form_serial_red{
   text-align: center;
   background:red;
-  transition: background 1s ease;
+  transition: background 2s ease;
   padding:10px;
 }
 .form_serial_green{
