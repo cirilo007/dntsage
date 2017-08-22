@@ -16,7 +16,7 @@ export default class SerialForm extends React.Component {
 
   componentDidMount() {
     var that = this;
-    var url = 'http://192.168.1.105/api/api.php/products?columns=id_prod,product_name';
+    var url = 'http://192.168.1.107/api/api.php/products?columns=id_prod,product_name';
 
     return fetch(url)
     .then((result) => {
@@ -60,34 +60,20 @@ export default class SerialForm extends React.Component {
       }
 
         var that = this;
-        var url = 'http://192.168.1.105/api/api.php/serials';
-        fetch(url, {
-          method: 'post',
-          body: JSON.stringify({id_serial: '', serial_number: this.state.value})
-        })
-        .then(res=>res.text())
-        .then(result=>{
-          if(result > 1){
-            that.setState({
-              formstyle: "form_serial_green",
-              value: this.state.value,
-              title_result: "Serial Number inserted",
-              disabled: !this.state.disabled
-            });
-            setTimeout(() => {
-                    this.setState({
-                      formstyle: "form_serial",
-                      value: "",
-                      title_result: "Scan product",
-                      disabled: !this.state.disabled
-                    });
-                    this.serial_input.focus();
-                }, 1000);
-            } else {
+switch(this.props.formName) {
+case "serialcheck_reception" :
+          var url = 'http://192.168.1.107/api/api.php/serials';
+          fetch(url, {
+            method: 'post',
+            body: JSON.stringify({id_serial: '', serial_number: this.state.value})
+          })
+          .then(res=>res.text())
+          .then(result=>{
+            if(result > 1){
               that.setState({
-                formstyle: "form_serial_red",
+                formstyle: "form_serial_green",
                 value: this.state.value,
-                title_result: "Serial Number duplicated",
+                title_result: "Serial Number inserted",
                 disabled: !this.state.disabled
               });
               setTimeout(() => {
@@ -98,10 +84,79 @@ export default class SerialForm extends React.Component {
                         disabled: !this.state.disabled
                       });
                       this.serial_input.focus();
-                  }, 1000);
+                  }, 2000);
+              } else {
+                that.setState({
+                  formstyle: "form_serial_red",
+                  value: this.state.value,
+                  title_result: "Serial Number duplicated",
+                  disabled: !this.state.disabled
+                });
+                setTimeout(() => {
+                        this.setState({
+                          formstyle: "form_serial",
+                          value: "",
+                          title_result: "Scan product",
+                          disabled: !this.state.disabled
+                        });
+                        this.serial_input.focus();
+                    }, 2000);
+              }
             }
-          }
-        )
+          )
+
+break
+case "serialcheck_videotest" :
+
+
+          var url = 'http://192.168.1.107/api/api.php/serials?filter=serial_number,eq,'+this.state.value;
+          return fetch(url)
+          .then((result) => {
+            return result.json();
+          }).
+          then((items) => {
+              if(items.serials.records.length === 1){
+                that.setState({
+                  formstyle: "form_serial_green",
+                  value: this.state.value,
+                  title_result: "Serial Number is valid",
+                  disabled: !this.state.disabled
+                });
+                setTimeout(() => {
+                        this.setState({
+                          formstyle: "form_serial",
+                          value: "",
+                          title_result: "Scan product",
+                          disabled: !this.state.disabled
+                        });
+                        this.serial_input.focus();
+                    }, 2000);
+              } else{
+                that.setState({
+                  formstyle: "form_serial_red",
+                  value: this.state.value,
+                  title_result: "Serial Number is not in database. Please send to reception",
+                  disabled: !this.state.disabled
+                });
+                setTimeout(() => {
+                        this.setState({
+                          formstyle: "form_serial",
+                          value: "",
+                          title_result: "Scan product",
+                          disabled: !this.state.disabled
+                        });
+                        this.serial_input.focus();
+                    }, 2000);
+              }
+            }
+          )
+
+
+
+
+break
+
+}
 
 
 

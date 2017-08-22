@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Loader from '../components/image_loader.jsx';
 import Modal from 'react-modal'
 
+import ButtonSwitch from '../components/button_switch.jsx';
 
 export default class ImageReload extends React.Component {
 
@@ -27,7 +28,7 @@ export default class ImageReload extends React.Component {
      }
   componentDidMount() {
     this.interval = setInterval(
-      this.tick,3000);
+      this.tick,2000);
 
   }
   componentWillUnmount() {
@@ -233,6 +234,7 @@ export default class ImageReload extends React.Component {
           style={modalstyle}
         >
         <div className="text-center">
+          <ButtonSwitch />
           <button className="close_modal" onClick={this.closeModal}>Close</button>
           <br />
           <h2>{this.state.modaltitle}</h2>

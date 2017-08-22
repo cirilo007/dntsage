@@ -19,7 +19,7 @@ export default class ListItems extends React.Component {
   }
   requestServer() {
     var that = this;
-    var url = 'http://192.168.1.105/api/api.php/serials?columns=id_serial,serial_number&order=id_serial,desc';
+    var url = 'http://192.168.1.107/api/api.php/serials?columns=id_serial,serial_number&order=id_serial,desc';
 
     return fetch(url)
     .then((result) => {

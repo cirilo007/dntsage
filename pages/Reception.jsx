@@ -13,7 +13,7 @@ export default class Reception extends React.Component {
     return (
     <div>
       <h1><img src="img/taoscanner.png" alt="scanner" height="40" /> Reception</h1>
-      <SerialForm />
+      <SerialForm formName="serialcheck_reception" />
       <ListItems />
     </div>
     )
