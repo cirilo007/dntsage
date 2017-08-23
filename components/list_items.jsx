@@ -7,7 +7,6 @@ export default class ListItems extends React.Component {
         serials: [],
         loading: true
      };
-     this.requestServer = this.requestServer.bind(this);
     }
   componentDidMount() {
     this.interval = setInterval(
@@ -17,33 +16,18 @@ export default class ListItems extends React.Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
-  requestServer() {
-    var that = this;
-    var url = 'http://192.168.1.107/api/api.php/serials?columns=id_serial,serial_number&order=id_serial,desc';
 
-    return fetch(url)
-    .then((result) => {
-      return result.json();
-    }).
-    then((items) => {
-        this.setState({
-          serials: items.serials.records,
-          loading: false
-        });
-      }
-    )
-  }
   render() {
     let content;
     var that = this;
-    if (this.state.loading === false) {
-      content = Object.keys(this.state.serials).map(function(key) {
+    if (this.props.loading === false) {
+      content = Object.keys(this.props.serials).map(function(key) {
        return <tr key={key}>
                <td>
-                 {that.state.serials[key][0]}
+                 {that.props.serials[key][0]}
                </td>
                <td>
-                 {that.state.serials[key][1]}
+                 {that.props.serials[key][1]}
                </td>
                <td>
                  <a href="">
@@ -67,7 +51,7 @@ export default class ListItems extends React.Component {
 
     return (
       <div>
-          <h1>Serials:</h1>
+          <h1>{this.props.serials.length} Serials:</h1>
           <br/>
           <table className="jsonTable">
             <thead>

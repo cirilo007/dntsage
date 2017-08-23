@@ -7,6 +7,39 @@ var FETCH_TIMEOUT = 500;
 export default class Reception extends React.Component {
   constructor() {
         super();
+        this.state = {
+          serials : [],
+          loading: false
+        }
+
+        this.getSerials = this.getSerials.bind(this);
+    }
+
+    getSerials(){
+      var that = this;
+      var url = 'http://192.168.1.107/api/serials/0';
+
+      return fetch(url)
+      .then((result) => {
+        return result.json();
+      }).
+      then((items) => {
+          this.setState({
+            serials: items,
+            loading: false
+          });
+        }
+      )
+    }
+
+    componentDidMount() {
+      this.getSerials();
+      this.interval = setInterval(
+        this.getSerials,2000);
+    }
+
+    componentWillUnmount() {
+      clearInterval(this.interval);
     }
 
     render() {
@@ -14,7 +47,7 @@ export default class Reception extends React.Component {
     <div>
       <h1><img src="img/taoscanner.png" alt="scanner" height="40" /> Reception</h1>
       <SerialForm formName="serialcheck_reception" />
-      <ListItems />
+      <ListItems serials={this.state.serials} loading={this.state.loading}/>
     </div>
     )
   }

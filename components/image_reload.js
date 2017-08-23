@@ -223,7 +223,8 @@ export default class ImageReload extends React.Component {
         <h5>
           <span>{this.props.name}</span>
         </h5>
-        <small className="timer"> Feed {this.state.bytes} b </small>
+        <small className="timer">{this.props.serial} <br />Feed {this.state.bytes} b </small>
+
         <div>
           <img src="img/no-connection.png" id={imageid} className="livefeed" alt={this.state.bytes} onClick={this.openModal} />
         </div>

@@ -15,21 +15,6 @@ export default class SerialForm extends React.Component {
   }
 
   componentDidMount() {
-    var that = this;
-    var url = 'http://192.168.1.107/api/api.php/products?columns=id_prod,product_name';
-
-    return fetch(url)
-    .then((result) => {
-      return result.json();
-    }).
-    then((items) => {
-        this.setState({
-          products: items.products.records,
-          loading: false,
-          title_result: "Scan product"
-        });
-      }
-    )
   }
 
   handleChange(event) {
@@ -107,19 +92,17 @@ case "serialcheck_reception" :
 
 break
 case "serialcheck_videotest" :
-
-
-          var url = 'http://192.168.1.107/api/api.php/serials?filter=serial_number,eq,'+this.state.value;
+          var url = 'http://192.168.1.107/api/changeState/1/'+ this.state.value;
           return fetch(url)
           .then((result) => {
             return result.json();
           }).
           then((items) => {
-              if(items.serials.records.length === 1){
+              if(items.status === "success"){
                 that.setState({
                   formstyle: "form_serial_green",
                   value: this.state.value,
-                  title_result: "Serial Number is valid",
+                  title_result: "Serial Number added to test bench ",
                   disabled: !this.state.disabled
                 });
                 setTimeout(() => {
@@ -135,7 +118,7 @@ case "serialcheck_videotest" :
                 that.setState({
                   formstyle: "form_serial_red",
                   value: this.state.value,
-                  title_result: "Serial Number is not in database. Please send to reception",
+                  title_result: "Failure",
                   disabled: !this.state.disabled
                 });
                 setTimeout(() => {
@@ -151,9 +134,6 @@ case "serialcheck_videotest" :
             }
           )
 
-
-
-
 break
 
 }
@@ -164,16 +144,6 @@ break
   }
 
   render() {
-
-    let products;
-    var that = this;
-    if (this.state.loading === false) {
-      products = Object.keys(this.state.products).map(function(key) {
-       return <option key={key} value={that.state.products[key][0]}>{that.state.products[key][1]}</option>
-      });
-    } else {
-      products = '';
-    }
 
     return (
 

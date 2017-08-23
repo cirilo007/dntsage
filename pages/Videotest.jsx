@@ -24,7 +24,7 @@ export default class Videotest extends React.Component {
    render() {
 
      var content = <div>
-                    <VideotestSetup /><Videotester />
+                    <VideotestSetup />
                   </div>
 
       return (
@@ -34,6 +34,8 @@ export default class Videotest extends React.Component {
                 <Col sm={12}>
                   <a href="#" key="1" onClick={this.onClick}>Step1</a> | <a href="#" key="2" onClick={this.onClick}>Step2</a> | <a href="#" key="3" onClick={this.onClick}>Step3</a>
                 </Col>
+              </Row>
+              <Row>
                 <Col sm={12}>
                   {content}
                 </Col>

@@ -167,6 +167,10 @@ padding:20px;
   font-size: 8px;
 }
 
+.listitemvideotest{
+  border:1px solid #212121;
+}
+
 
 table.jsonTable{
   width:100%;
