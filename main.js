@@ -11,6 +11,8 @@ import Dashboard from './pages/Dashboard.jsx';
 import Videotest from './pages/Videotest.jsx';
 import Reception from './pages/Reception.jsx';
 
+import LoginForm from './components/login_form.jsx';
+
 // Render
 render((
    <Router>
@@ -18,6 +20,7 @@ render((
       <Route exact path="/" component={Dashboard} />
       <Route path="/reception" component={Reception} />
       <Route path="/videotest" component={Videotest} />
+      <Route path="/login" component={LoginForm} />
       </Layout>
    </Router >
 ), document.getElementById('app'));

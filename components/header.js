@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem}  from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {LinkContainer} from 'react-router-bootstrap';
+import User from '../components/User.jsx';
 
 export default class Header extends React.Component {
   render() {
@@ -35,6 +36,12 @@ export default class Header extends React.Component {
           <LinkContainer to="/packaging">
             <NavItem eventKey={1}><i className="fa fa-cubes"></i> Packaging</NavItem>
           </LinkContainer>
+        </Nav>
+        <Nav className="pull-right">
+          <LinkContainer to="/videotest">
+            <User />
+          </LinkContainer>
+
         </Nav>
         </Navbar.Collapse>
         </Navbar>

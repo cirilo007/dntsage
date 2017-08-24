@@ -5,6 +5,7 @@ import Footer from '../components/footer.js';
 import SerialForm from '../components/serial_form.jsx';
 import ListItemsVideoTest from '../components/list_items_videotest.jsx';
 
+
 //import { DefaultPlayer as Video } from 'react-html5video';
 
 import {Grid, Row, Col }  from 'react-bootstrap';
@@ -25,7 +26,7 @@ export default class Videotest extends React.Component {
      }
       getSerials(){
         var that = this;
-        var url = 'http://192.168.1.107/api/serials/1';
+        var url = 'http://192.168.1.107/api/serials-active/';
 
         return fetch(url)
         .then((result) => {

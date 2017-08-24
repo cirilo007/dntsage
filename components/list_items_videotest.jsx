@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageReload from '../components/image_reload.js';
 
 export default class ListItemsVideoTest extends React.Component {
   constructor(props) {
@@ -17,7 +18,11 @@ export default class ListItemsVideoTest extends React.Component {
           i++
          return (
          <div key={key} className="col-sm-1">
-               {that.props.serials[key][1]}
+           <ImageReload
+             url={"http://"+that.props.serials[key]['slot_ip']+"/img/feed"+that.props.serials[key]['slot_feed']+".jpg"}
+             name={i}
+             serial={that.props.serials[key]["slot_serial"]}
+             />
          </div>
          )
         });
