@@ -3,9 +3,36 @@ import ReactDOM from 'react-dom';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem}  from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {LinkContainer} from 'react-router-bootstrap';
-import User from '../components/User.jsx';
+
+import AuthActions from '../actions/AuthActions.js';
+import AuthStore from '../stores/AuthStore.js';
 
 export default class Header extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      authenticated: false
+    }
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
+  }
+
+  login() {
+    this.props.lock.show((err, profile, token) => {
+      if (err) {
+        alert(err);
+        return;
+      }
+      AuthActions.logUserIn(profile, token);
+      this.setState({authenticated: true});
+    });
+  }
+
+  logout() {
+    AuthActions.logUserOut();
+    this.setState({authenticated: false});
+  }
+
   render() {
     return (
       <div>
@@ -37,12 +64,18 @@ export default class Header extends React.Component {
             <NavItem eventKey={1}><i className="fa fa-cubes"></i> Packaging</NavItem>
           </LinkContainer>
         </Nav>
-        <Nav className="pull-right">
-          <LinkContainer to="/videotest">
-            <User />
-          </LinkContainer>
 
-        </Nav>
+          { !this.state.authenticated ? (
+            <Nav>
+            <NavItem onClick={this.login}>Login</NavItem>
+            </Nav>
+        ) : (
+            <Nav>
+              <NavItem ><i className="fa fa-user"></i> Logged-in as </NavItem>
+              <NavItem onClick={this.logout}>Logout</NavItem>
+            </Nav>
+
+          )}
         </Navbar.Collapse>
         </Navbar>
       </div>

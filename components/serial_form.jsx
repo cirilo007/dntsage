@@ -102,7 +102,7 @@ case "serialcheck_videotest" :
                 that.setState({
                   formstyle: "form_serial_green",
                   value: this.state.value,
-                  title_result: "Serial Number added to test bench ",
+                  title_result: "Serial Number added to test bench. Connect product to slot ",
                   disabled: !this.state.disabled
                 });
                 setTimeout(() => {

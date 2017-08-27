@@ -5,7 +5,7 @@ import Loader from '../components/image_loader.jsx';
 import Modal from 'react-modal'
 
 import ButtonSwitch from '../components/button_switch.jsx';
-
+import ListSymptoms from '../components/list_symptoms.jsx';
 export default class ImageReload extends React.Component {
 
   constructor(props) {
@@ -19,21 +19,44 @@ export default class ImageReload extends React.Component {
            showLoader: false,
            modalopen: false,
            feedimage: '/img/ajax-loader.gif',
-           modaltitle: ''
+           modaltitle: '',
+           controls: '',
+           symptoms:[]
          };
          this.tick = this.tick.bind(this);
          this.componentDidMount = this.componentDidMount.bind(this);
          this.openModal = this.openModal.bind(this);
-         this.closeModal = this.closeModal.bind(this)
+         this.closeModal = this.closeModal.bind(this);
+         this.mouseEnter = this.mouseEnter.bind(this);
+         this.mouseExit = this.mouseExit.bind(this);
+         this.getSymptoms = this.getSymptoms.bind(this);
      }
   componentDidMount() {
     this.interval = setInterval(
       this.tick,2000);
+      this.getSymptoms();
 
   }
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+
+  getSymptoms(){
+    var url = 'http://192.168.1.107/api/symptoms/'+this.props.serial_id;
+
+    return fetch(url)
+    .then((result) => {
+      return result.json();
+    }).
+    then((items) => {
+        this.setState({
+          symptoms: items
+        });
+        //console.log(items);
+      }
+    )
+  }
+
   tick(){
     var self = this;
     var xhr = new XMLHttpRequest();
@@ -49,10 +72,9 @@ export default class ImageReload extends React.Component {
       document.getElementById(imageid).src="/img/ajax-loader.gif";
 
     }
-
     xhr.onload = function(e) {
 
-      if (this.status === 200) {
+      if (this.status === 200 && self.props.teststatus == 0) {
         var uInt8Array = new Uint8Array(this.response);
         var i = uInt8Array.length;
         var binaryString = new Array(i);
@@ -74,7 +96,8 @@ export default class ImageReload extends React.Component {
         else if (bytes > 7000 && bytes < 12000) {
           self.setState({
           //  color: "holder bg-danger",
-            message: "No signal from HDMI" });
+            message: "No signal from HDMI" }
+          );
             document.getElementById(imageid).src="/img/no-signal.jpg";
 //            document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
@@ -90,6 +113,8 @@ export default class ImageReload extends React.Component {
           self.setState({message: "OK" });
           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
+      } else{
+        document.getElementById(imageid).src="/img/disabled.png";
       }
     };
 
@@ -162,6 +187,20 @@ export default class ImageReload extends React.Component {
       return output;
   }
 
+  getInitialState() {
+    return {
+      isMouseInside: false
+    };
+  }
+
+  mouseEnter(){
+  this.setState({ isMouseInside: true });
+
+  }
+  mouseExit(){
+    this.setState({ isMouseInside: false });
+    this.getSymptoms();
+  }
   openModal() {
       var xhr = new XMLHttpRequest();
       var ipaddress = this.props.url.split("/");
@@ -220,13 +259,22 @@ export default class ImageReload extends React.Component {
     }
       return (
       <div className="bg-black">
-        <h5>
+        <h5 onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseExit}>
           <span>{this.props.name}</span>
+          {this.state.isMouseInside ?
+            <div>
+            <div className="col-sm-12">
+              <b><i className="fa fa-warning"></i> Failure reason:</b>
+              </div>
+              <ListSymptoms symptoms={this.state.symptoms} serial={this.props.serial} serial_id={this.props.serial_id} />
+            </div>
+                                   : null}
+
         </h5>
-        <small className="timer">{this.props.serial} <br />Feed {this.state.bytes} b </small>
+        <small className="timer"><i className="fa fa-barcode"></i> {this.props.serial} <br /><i className="fa fa-feed"></i> {this.state.bytes} b </small>
 
         <div>
-          <img src="img/no-connection.png" id={imageid} className="livefeed" alt={this.state.bytes} onClick={this.openModal} />
+          <img src="img/no-connection.png" id={imageid} className="livefeed img-responsive" alt={this.state.bytes} onClick={this.openModal} />
         </div>
         <Modal
           onAfterOpen={this.getFeed}
@@ -247,4 +295,6 @@ export default class ImageReload extends React.Component {
       </div>
     );
   }
+
+
 };

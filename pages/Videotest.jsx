@@ -29,18 +29,7 @@ export default class Videotest extends React.Component {
 
       return (
           <div className="wrapper">
-            <Grid fluid>
-              <Row className="header">
-                <Col sm={12}>
-                  <a href="#" key="1" onClick={this.onClick}>Step1</a> | <a href="#" key="2" onClick={this.onClick}>Step2</a> | <a href="#" key="3" onClick={this.onClick}>Step3</a>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm={12}>
-                  {content}
-                </Col>
-              </Row>
-            </Grid>
+            {content}
           </div>
 
       );

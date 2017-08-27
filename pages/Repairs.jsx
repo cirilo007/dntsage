@@ -4,7 +4,7 @@ import ListItems from '../components/list_items.jsx';
 
 var FETCH_TIMEOUT = 500;
 
-export default class Reception extends React.Component {
+export default class Repairs extends React.Component {
   constructor() {
         super();
         this.state = {
@@ -17,7 +17,7 @@ export default class Reception extends React.Component {
 
     getSerials(){
       var that = this;
-      var url = 'http://192.168.1.107/api/serials/0';
+      var url = 'http://192.168.1.107/api/serials/2';
 
       return fetch(url)
       .then((result) => {

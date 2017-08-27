@@ -4,9 +4,14 @@ body{
 }
 
 img.livefeed{
-  max-height:230px;
   position:relative;
-  padding:20px;
+  padding:0px;
+  background:#000;
+}
+
+.symptom{
+  padding:5px;
+  border-top:1px dashed #f2f2f2;
 }
 
 h1{
@@ -23,9 +28,9 @@ h2{
 h5{
   padding:0;
   position:absolute;
-  top:25px;
-  left:35px;
-  z-index:1000;
+  top:5px;
+  left:15px;
+  z-index:1000000000000;
 }
 h5 > span{
   font-size:20px;
@@ -34,7 +39,28 @@ h5 > span{
   float:left;
   padding:10px;
   background:rgba(0,0,0,0.5);
+  width:40px;
+  text-align: center;
 
+}
+h5 > div{
+  color:#212121;
+  position: absolute;
+  top:-15px;
+  left:40px;
+  right:0px;
+  bottom: 0px;
+  background:rgba(255,255,255,1);
+  width:180px;
+  border:1px solid #212121;
+  height:150px;
+  overflow: hidden;
+}
+h5 > div > div{
+  padding:5px;
+  list-style: none;
+  width:100%;
+  background:rgba(255,255,255,1);
 }
 
 .header{
@@ -120,13 +146,14 @@ padding:20px;
 }
 .timer{
   position:absolute;
-  bottom:45px;
+  bottom:20px;
   background:rgba(0,0,0,0.5);
-  left:40px;
-  padding:3px;
-  border-radius: 5px;
+  left:15px;
+  right:15px;
+  padding:3px 3px 3px 13px;
   z-index:10000;
-  font-size:9px;
+  font-size:10px;
+  font-weight:bold;
 }
 
 .image_reloader{
@@ -139,6 +166,10 @@ padding:20px;
   -webkit-animation:fadeout 2s;
   -webkit-animation-delay:fadeout 0s;
 }
+.hdmiswitch{
+  margin-top:20px;
+  margin-right:30px;
+}
 
 .monitor{
   z-index:1000;
@@ -150,7 +181,7 @@ padding:20px;
   padding-left:40px;
 }
 .ReactModal__Overlay{
-  z-index:1000000000;
+z-index:2000000000000;
 }
 .btn-mybutt{
   margin:5px;

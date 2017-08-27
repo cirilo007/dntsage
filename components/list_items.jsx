@@ -20,7 +20,7 @@ export default class ListItems extends React.Component {
   render() {
     let content;
     var that = this;
-    if (this.props.loading === false) {
+    if (this.props.loading === false && !this.props.serials.error) {
       content = Object.keys(this.props.serials).map(function(key) {
        return <tr key={key}>
                <td>
@@ -42,11 +42,22 @@ export default class ListItems extends React.Component {
              </tr>
       });
     } else {
+      if(this.props.serials.error){
+        content = <tr>
+                <td colSpan={4} className="text-center">
+                    An error occured while retrieving the data.
+                    <pre>
+                      {this.props.serials.error}
+                    </pre>
+                </td>
+              </tr>;
+          } else {
       content = <tr>
               <td colSpan={4} className="text-center">
                   Waiting for data...
               </td>
             </tr>;
+        }
     }
 
     return (

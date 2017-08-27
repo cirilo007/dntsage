@@ -11,7 +11,7 @@ import Dashboard from './pages/Dashboard.jsx';
 import Videotest from './pages/Videotest.jsx';
 import Reception from './pages/Reception.jsx';
 
-import LoginForm from './components/login_form.jsx';
+import Repairs from './pages/Repairs.jsx';
 
 // Render
 render((
@@ -20,7 +20,7 @@ render((
       <Route exact path="/" component={Dashboard} />
       <Route path="/reception" component={Reception} />
       <Route path="/videotest" component={Videotest} />
-      <Route path="/login" component={LoginForm} />
+      <Route path="/repairs" component={Repairs} />
       </Layout>
    </Router >
 ), document.getElementById('app'));
