@@ -7,7 +7,8 @@ export default class SerialForm extends React.Component {
       products: [],
       value: '',
       formstyle: "form_serial",
-      disabled: false
+      disabled: false,
+      title_result: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -15,6 +16,19 @@ export default class SerialForm extends React.Component {
   }
 
   componentDidMount() {
+    switch(this.props.formName) {
+
+      case "serialcheck_videotest":
+          this.setState({
+            title_result: "Escanear y instalar " + this.props.remaining + " productos"
+          });
+        break;
+        case "serialcheck_reception":
+        this.setState({
+          title_result: "Escanear Productos"
+        });
+          break;
+    }
   }
 
   handleChange(event) {
@@ -92,6 +106,9 @@ case "serialcheck_reception" :
 
 break
 case "serialcheck_videotest" :
+          this.setState({
+            title_result: "Escanear :" + this.props.remaining
+          });
           var url = 'http://192.168.1.107/api/changeState/1/'+ this.state.value;
           return fetch(url)
           .then((result) => {
@@ -146,7 +163,6 @@ break
   render() {
 
     return (
-
       <form id="serial_form" className={this.state.formstyle} onSubmit={this.handleSubmit}>
         <h2>{this.state.title_result}</h2>
         <label className="input_wrapper">

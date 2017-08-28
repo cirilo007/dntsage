@@ -6,7 +6,7 @@ import SerialForm from '../components/serial_form.jsx';
 import ListItemsVideoTest from '../components/list_items_videotest.jsx';
 import ButtonSwitch from '../components/button_switch.jsx';
 import ButtonAction from '../components/button_action.jsx';
-
+import Steps from '../components/steps.jsx';
 //import { DefaultPlayer as Video } from 'react-html5video';
 
 import {Grid, Row, Col }  from 'react-bootstrap';
@@ -18,7 +18,7 @@ export default class Videotest extends React.Component {
          super(props);
          this.state = {
            testMax: "20",
-           remaining: "20",
+           remaining: "0",
            loading:false,
            serials: []
          };
@@ -54,22 +54,14 @@ export default class Videotest extends React.Component {
 
   render() {
       return (
-        <div>
+        <div className="container-fluid">
+          <Steps />
+          <br />
           {this.state.remaining > 0 ?
             <div>
-              <h1>Scan and Install {this.state.remaining} / {this.state.testMax} products</h1>
-              <SerialForm formName="serialcheck_videotest" />
+              <SerialForm formName="serialcheck_videotest" remaining={this.state.remaining} />
             </div>
            : null}
-
-          <div className="pull-right hdmiswitch">
-            <ButtonSwitch />
-              <ButtonAction
-                    name = "Portal upgrade"
-                    script = "lirc_01.php"
-                    ico = "cloud-download"
-              />
-          </div>
           <ListItemsVideoTest serials={this.state.serials} loading={this.state.loading} />
         </div>
 

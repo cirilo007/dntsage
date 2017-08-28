@@ -38,12 +38,10 @@ export default class ListItemsVideoTest extends React.Component {
   render() {
 
     return (
-      <div>
-          <h1>{this.props.serials.length} Products in the test bench</h1>
-          <div className="row">
-            {this.serials()}
-          </div>
-      </div>
+        <div className="row">
+          <br/>
+          {this.serials()}
+        </div>
     );
   }
 }
