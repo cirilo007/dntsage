@@ -74,7 +74,7 @@ export default class ImageReload extends React.Component {
     }
     xhr.onload = function(e) {
 
-      if (this.status === 200 && self.props.teststatus == 0) {
+      if (this.status === 200) {
         var uInt8Array = new Uint8Array(this.response);
         var i = uInt8Array.length;
         var binaryString = new Array(i);
@@ -257,6 +257,7 @@ export default class ImageReload extends React.Component {
 
       }
     }
+
       return (
       <div className="bg-black">
         <h5 onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseExit}>
@@ -264,15 +265,23 @@ export default class ImageReload extends React.Component {
           {this.state.isMouseInside ?
             <div>
             <div className="col-sm-12">
-              <b><i className="fa fa-warning"></i> Failure reason:</b>
+              <b><i className="fa fa-warning"></i> Reportar error:</b>
               </div>
               <ListSymptoms symptoms={this.state.symptoms} serial={this.props.serial} serial_id={this.props.serial_id} />
             </div>
                                    : null}
 
         </h5>
-        <small className="timer"><i className="fa fa-barcode"></i> {this.props.serial} <br /><i className="fa fa-feed"></i> {this.state.bytes} b </small>
 
+        <small className="timer">
+          <i className="fa fa-barcode"></i> {this.props.serial}
+          <br />
+          <i className="fa fa-feed"></i> {this.state.bytes} b
+
+        </small>
+        <div className="test_status">
+           {this.props.teststatus == 1  ? <i className="fa fa-asterisk fa-2x text-danger"></i> : <i className="fa fa-2x fa-check-square-o text-success"></i>}
+        </div>
         <div>
           <img src="img/no-connection.png" id={imageid} className="livefeed img-responsive" alt={this.state.bytes} onClick={this.openModal} />
         </div>

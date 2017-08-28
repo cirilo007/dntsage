@@ -20,9 +20,11 @@ export default class Videotest extends React.Component {
            testMax: "20",
            remaining: "0",
            loading:false,
-           serials: []
+           serials: [],
+           steps: []
          };
          this.getSerials = this.getSerials.bind(this);
+         this.getSteps = this.getSteps.bind(this);
      }
       getSerials(){
         var that = this;
@@ -41,9 +43,26 @@ export default class Videotest extends React.Component {
           }
         )
       }
+      getSteps(){
+        var that = this;
+        var url = 'http://192.168.1.107/api/steps/';
+
+        return fetch(url)
+        .then((result) => {
+          return result.json();
+        }).
+        then((items) => {
+            that.setState({
+              steps: items
+            });
+          }
+        )
+      }
+
 
      componentDidMount() {
        this.getSerials();
+       this.getSteps();
        this.interval = setInterval(
          this.getSerials,2000);
      }
@@ -55,7 +74,7 @@ export default class Videotest extends React.Component {
   render() {
       return (
         <div className="container-fluid">
-          <Steps />
+          <Steps steps={this.state.steps} />
           <br />
           {this.state.remaining > 0 ?
             <div>

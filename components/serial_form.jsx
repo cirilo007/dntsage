@@ -25,7 +25,7 @@ export default class SerialForm extends React.Component {
         break;
         case "serialcheck_reception":
         this.setState({
-          title_result: "Escanear Productos"
+          title_result: "Ingresar un producto"
         });
           break;
     }
@@ -49,7 +49,7 @@ export default class SerialForm extends React.Component {
               this.setState({
                 formstyle: "form_serial",
                 value: "",
-                title_result: "Scan product",
+                title_result: "Escanear y instalar " + this.props.remaining + " productos",
                 disabled: !this.state.disabled
               });
               this.serial_input.focus();
@@ -79,7 +79,7 @@ case "serialcheck_reception" :
                       this.setState({
                         formstyle: "form_serial",
                         value: "",
-                        title_result: "Scan product",
+                        title_result: "Ingresar un producto",
                         disabled: !this.state.disabled
                       });
                       this.serial_input.focus();
@@ -88,14 +88,14 @@ case "serialcheck_reception" :
                 that.setState({
                   formstyle: "form_serial_red",
                   value: this.state.value,
-                  title_result: "Serial Number duplicated",
+                  title_result: "Serial ya existe en el sistema",
                   disabled: !this.state.disabled
                 });
                 setTimeout(() => {
                         this.setState({
                           formstyle: "form_serial",
                           value: "",
-                          title_result: "Scan product",
+                          title_result: "Ingresar un producto",
                           disabled: !this.state.disabled
                         });
                         this.serial_input.focus();
@@ -126,7 +126,7 @@ case "serialcheck_videotest" :
                         this.setState({
                           formstyle: "form_serial",
                           value: "",
-                          title_result: "Scan product",
+                          title_result: "Escanear y instalar " + this.props.remaining + " productos",
                           disabled: !this.state.disabled
                         });
                         this.serial_input.focus();
@@ -142,7 +142,7 @@ case "serialcheck_videotest" :
                         this.setState({
                           formstyle: "form_serial",
                           value: "",
-                          title_result: "Scan product",
+                          title_result: "Escanear y instalar " + this.props.remaining + " productos",
                           disabled: !this.state.disabled
                         });
                         this.serial_input.focus();
