@@ -43,7 +43,7 @@ export default class ButtonStep extends React.Component {
                   className='fa fa-cog'
                   name={this.props.title}
                   style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                /> <b>{this.props.stepkey}</b> - {this.props.title} 
+                /> <b>{this.props.stepkey}</b> - {this.props.title}
               </button>
 
            :
@@ -52,9 +52,8 @@ export default class ButtonStep extends React.Component {
                    className='fa fa-cog'
                    name={this.props.title}
                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                 /> <b>{this.props.stepkey}</b> - {this.props.title}
+                 /> <b>{this.props.stepkey}</b> - {this.props.title} ----
               </button>
-
     );
   }
 };

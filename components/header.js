@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem}  from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {LinkContainer} from 'react-router-bootstrap';
-
 import AuthActions from '../actions/AuthActions.js';
 import AuthStore from '../stores/AuthStore.js';
 
@@ -11,10 +10,17 @@ export default class Header extends React.Component {
   constructor() {
     super();
     this.state = {
-      authenticated: false
+      authenticated: false,
+      user:[]
     }
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
+  }
+
+  componentWillMount(){
+    this.setState({
+      user: JSON.parse(localStorage.getItem('profile'))
+    }) ;
   }
 
   login() {
@@ -24,14 +30,22 @@ export default class Header extends React.Component {
         return;
       }
       AuthActions.logUserIn(profile, token);
-      this.setState({authenticated: true});
+      this.setState({
+        authenticated: true,
+        user: JSON.parse(localStorage.getItem('profile'))
+      });
+      window.location.reload();
     });
+
   }
 
   logout() {
     AuthActions.logUserOut();
     this.setState({authenticated: false});
+    window.location.reload();
   }
+
+
 
   render() {
     return (
@@ -44,6 +58,7 @@ export default class Header extends React.Component {
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
+        { !this.state.authenticated && !localStorage.getItem('id_token') ? null :
         <Nav>
           <LinkContainer to="/dashboard">
             <NavItem eventKey={1}><i className="fa fa-dashboard"></i> Dashboard</NavItem>
@@ -57,25 +72,27 @@ export default class Header extends React.Component {
           <LinkContainer to="/repairs">
             <NavItem eventKey={1}><i className="fa fa-microchip"></i> Repairs</NavItem>
           </LinkContainer>
-          <LinkContainer to="/recycle">
+          <LinkContainer to="/refurbish">
             <NavItem eventKey={1}><i className="fa fa-recycle"></i> Refurbish</NavItem>
           </LinkContainer>
           <LinkContainer to="/packaging">
             <NavItem eventKey={1}><i className="fa fa-cubes"></i> Packaging</NavItem>
           </LinkContainer>
         </Nav>
-
-          { !this.state.authenticated ? (
-            <Nav>
-            <NavItem onClick={this.login}>Login</NavItem>
-            </Nav>
+      }
+        <div className="pull-right">
+          { !this.state.authenticated && !localStorage.getItem('id_token') ?
+             (
+               <Nav>
+               <NavItem onClick={this.login}>Login</NavItem>
+               </Nav>
         ) : (
-            <Nav>
-              <NavItem ><i className="fa fa-user"></i> Logged-in as </NavItem>
-              <NavItem onClick={this.logout}>Logout</NavItem>
-            </Nav>
-
+              <Nav>
+                <NavItem ><i className="fa fa-user"></i> Logged-in as {this.state.user.name}</NavItem>
+                <NavItem onClick={this.logout}>Logout</NavItem>
+              </Nav>
           )}
+          </div>
         </Navbar.Collapse>
         </Navbar>
       </div>

@@ -4,7 +4,7 @@ import ListItems from '../components/list_items.jsx';
 
 var FETCH_TIMEOUT = 500;
 
-export default class Repairs extends React.Component {
+export default class Refurbish extends React.Component {
   constructor() {
         super();
         this.state = {
@@ -17,7 +17,7 @@ export default class Repairs extends React.Component {
 
     getSerials(){
       var that = this;
-      var url = 'http://192.168.1.107/api/serials/2';
+      var url = 'http://192.168.1.107/api/serials/3';
 
       return fetch(url)
       .then((result) => {
@@ -45,7 +45,7 @@ export default class Repairs extends React.Component {
     render() {
     return (
     <div>
-      <h1><img src="img/taoscanner.png" alt="scanner" height="40" /> Repairs</h1>
+      <h1><img src="img/taoscanner.png" alt="scanner" height="40" /> Refurbish</h1>
       <SerialForm formName="serialcheck_reception" />
       <ListItems serials={this.state.serials} loading={this.state.loading}/>
     </div>

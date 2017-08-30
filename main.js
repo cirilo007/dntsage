@@ -12,6 +12,7 @@ import Videotest from './pages/Videotest.jsx';
 import Reception from './pages/Reception.jsx';
 
 import Repairs from './pages/Repairs.jsx';
+import Refurbish from './pages/Refurbish.jsx';
 
 // Render
 render((
@@ -21,6 +22,7 @@ render((
       <Route path="/reception" component={Reception} />
       <Route path="/videotest" component={Videotest} />
       <Route path="/repairs" component={Repairs} />
+      <Route path="/refurbish" component={Refurbish} />
       </Layout>
    </Router >
 ), document.getElementById('app'));

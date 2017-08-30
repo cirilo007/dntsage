@@ -8,7 +8,7 @@ export default class Layout extends React.Component {
   constructor() {
     super();
     this.state = {
-      authenticated: false
+      authenticated: localStorage.getItem('id_token') ? true : false,
     }
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
@@ -21,14 +21,20 @@ export default class Layout extends React.Component {
         return;
       }
       AuthActions.logUserIn(profile, token);
-      this.setState({authenticated: true});
+      this.setState({
+        authenticated: true,
+      });
     });
+
   }
 
   logout() {
     AuthActions.logUserOut();
-    this.setState({authenticated: false});
+    this.setState({
+      authenticated: false,
+  });
   }
+
 
   componentWillMount() {
       this.lock = new Auth0Lock('cDKdfTJDZgQCln872jVRFJ1aO5DPnL8n', 'dntdom.auth0.com');
@@ -38,12 +44,14 @@ export default class Layout extends React.Component {
       return (
          <div>
            <Header lock={this.lock} />
-             { !this.state.authenticated ?
+             { this.state.authenticated ?
             <div>
               {this.props.children}
             </div>
             : (
-            null
+            <div>
+              Please login
+            </div>
           )}
          </div>
       );
