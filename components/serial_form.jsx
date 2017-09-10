@@ -1,4 +1,5 @@
 import React from 'react';
+import * as constants from '../constants/AppConstants.js';
 
 export default class SerialForm extends React.Component {
   constructor(props) {
@@ -61,7 +62,7 @@ export default class SerialForm extends React.Component {
         var that = this;
 switch(this.props.formName) {
 case "serialcheck_reception" :
-          var url = 'http://192.168.1.107/api/api.php/serials';
+          var url = 'http://'+ constants.LOCAL_SERVER +'/api/api.php/serials';
           fetch(url, {
             method: 'post',
             body: JSON.stringify({id_serial: '', serial_number: this.state.value})
@@ -109,7 +110,7 @@ case "serialcheck_videotest" :
           this.setState({
             title_result: "Escanear :" + this.props.remaining
           });
-          var url = 'http://192.168.1.107/api/changeState/1/'+ this.state.value;
+          var url = 'http://'+ constants.LOCAL_SERVER +'/api/changeState/1/'+ this.state.value;
           return fetch(url)
           .then((result) => {
             return result.json();

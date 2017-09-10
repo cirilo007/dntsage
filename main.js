@@ -18,7 +18,7 @@ import Refurbish from './pages/Refurbish.jsx';
 render((
    <Router>
      <Layout>
-      <Route exact path="/" component={Dashboard} />
+      <Route exact path="/dashboard" component={Dashboard} />
       <Route path="/reception" component={Reception} />
       <Route path="/videotest" component={Videotest} />
       <Route path="/repairs" component={Repairs} />

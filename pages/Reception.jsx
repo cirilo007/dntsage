@@ -2,6 +2,8 @@ import React from 'react';
 import SerialForm from '../components/serial_form.jsx';
 import ListItems from '../components/list_items.jsx';
 
+import * as constants from '../constants/AppConstants.js';
+
 var FETCH_TIMEOUT = 500;
 
 export default class Reception extends React.Component {
@@ -17,7 +19,7 @@ export default class Reception extends React.Component {
 
     getSerials(){
       var that = this;
-      var url = 'http://192.168.1.107/api/serials/0';
+      var url = 'http://'+ constants.LOCAL_SERVER +'/api/serials/0';
 
       return fetch(url)
       .then((result) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Switch from 'react-bootstrap-switch';
+import * as constants from '../constants/AppConstants.js';
 
 export default class ButtonAction extends React.Component {
 
@@ -16,16 +17,16 @@ export default class ButtonAction extends React.Component {
     var exec = require('child_process').exec;
     function puts(error, stdout, stderr) { sys.puts(stdout) ; alert(error); }
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', "http://192.168.1.107/hdmiswitch.php?test=3", true);
+      xhr.open('GET', "http://"+ constants.LOCAL_SERVER +"/hdmiswitch.php?test=3", true);
       xhr.send();
 
   }
 
   sendCommand(e) {
     if(this.state.switchState){
-      var url = "http://192.168.1.107/hdmiswitch.php?test=1";
+      var url = 'http://'+ constants.LOCAL_SERVER +'/hdmiswitch.php?test=1';
     } else {
-      var url = "http://192.168.1.107/hdmiswitch.php?test=3";
+      var url = 'http://'+ constants.LOCAL_SERVER +'/hdmiswitch.php?test=3';
     }
     this.setState( { switchState: !this.state.switchState } );
     var sys = require('sys');

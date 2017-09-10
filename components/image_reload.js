@@ -6,6 +6,10 @@ import Modal from 'react-modal'
 
 import ButtonSwitch from '../components/button_switch.jsx';
 import ListSymptoms from '../components/list_symptoms.jsx';
+
+import * as constants from '../constants/AppConstants.js';
+
+
 export default class ImageReload extends React.Component {
 
   constructor(props) {
@@ -42,7 +46,7 @@ export default class ImageReload extends React.Component {
   }
 
   getSymptoms(){
-    var url = 'http://192.168.1.107/api/symptoms/'+this.props.serial_id;
+    var url = 'http://'+ constants.LOCAL_SERVER +'/api/symptoms/'+this.props.serial_id;
 
     return fetch(url)
     .then((result) => {
@@ -98,8 +102,8 @@ export default class ImageReload extends React.Component {
           //  color: "holder bg-danger",
             message: "No signal from HDMI" }
           );
-            document.getElementById(imageid).src="/img/no-signal.jpg";
-//            document.getElementById(imageid).src="data:image/png;base64,"+base64;
+//            document.getElementById(imageid).src="/img/no-signal.jpg";
+            document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else if (bytes > 60000) {
           self.setState({

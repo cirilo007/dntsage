@@ -1,4 +1,5 @@
 import React from 'react';
+import * as constants from '../constants/AppConstants.js';
 
 export default class ListSymptoms extends React.Component {
   constructor(props) {
@@ -21,9 +22,9 @@ export default class ListSymptoms extends React.Component {
       let url
       {!event.target.checked
         ?
-          url = 'http://192.168.1.107/api/removeserial2symptom/'+event.target.value+'/'+this.props.serial_id
+          url = 'http://'+ constants.LOCAL_SERVER +'/api/removeserial2symptom/'+event.target.value+'/'+this.props.serial_id
         :
-          url = 'http://192.168.1.107/api/addserial2symptom/'+event.target.value+'/'+this.props.serial_id
+          url = 'http://'+ constants.LOCAL_SERVER +'/api/addserial2symptom/'+event.target.value+'/'+this.props.serial_id
       }
       this.setState({isChecked: !this.state.isChecked});
       fetch(url)
