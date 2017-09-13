@@ -71,13 +71,18 @@ export default class Layout extends React.Component {
                   {this.props.children}
                 </div>
                 : (
-                <div>
-                  Please login
+                <div className="text-center">
+                  <h3>Access denied <br/>Please login</h3>
                 </div>
               )}
             </div>
              :
-             <div>Connecting to server....</div>}
+             <div className="text-center">
+               <br/>
+               <i className="fa fa-spinner fa-pulse fa-5x"></i>
+               <br/><br/>
+               Connecting to server....
+             </div>}
 
          </div>
       );

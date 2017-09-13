@@ -24,7 +24,7 @@ export default class ListItems extends React.Component {
       content = Object.keys(this.props.serials).map(function(key) {
        return <tr key={key}>
                <td>
-                 {that.props.serials[key][0]}
+                 {that.props.serials[key]['product_name']}
                </td>
                <td>
                  {that.props.serials[key][1]}
@@ -44,7 +44,7 @@ export default class ListItems extends React.Component {
     } else {
       if(this.props.serials.error){
         content = <tr>
-                <td colSpan={4} className="text-center">
+                <td colSpan={5} className="text-center">
                     An error occured while retrieving the data.
                     <pre>
                       {this.props.serials.error}
@@ -67,8 +67,8 @@ export default class ListItems extends React.Component {
           <table className="jsonTable">
             <thead>
               <tr>
-                <th>id_serial</th>
-                <th>serial_number</th>
+                <th>Producto</th>
+                <th>Serial</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>

@@ -22,7 +22,7 @@ export default class ListItemsVideoTest extends React.Component {
           i++
           //that.getSymptoms(that.props.serials[key]["slot_serial"]);
          return (
-         <div key={key} className="col-sm-2">
+         <div key={key} className="col-sm-3">
            <ImageReload
              url={"http://"+that.props.serials[key]['slot_ip']+"/img/feed"+that.props.serials[key]['slot_feed']+".jpg"}
              name={i}

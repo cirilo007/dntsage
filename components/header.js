@@ -54,6 +54,7 @@ export default class Header extends React.Component {
         <Navbar.Header>
           <Navbar.Brand>
             <a href="#"><img src="img/logo2.png" alt="DNT" className="logo" /></a>
+
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -80,21 +81,24 @@ export default class Header extends React.Component {
           </LinkContainer>
         </Nav>
       }
+        </Navbar.Collapse>
+      </Navbar>
+      <div className="bg-banner">
+        <img src="img/sagemcom.png" height="30" />
         <div className="pull-right">
+          <div className="login-info">
           { !this.state.authenticated && !localStorage.getItem('id_token') ?
              (
-               <Nav>
-               <NavItem onClick={this.login}>Login</NavItem>
-               </Nav>
-        ) : (
-              <Nav>
-                <NavItem ><i className="fa fa-user"></i> Logged-in as {this.state.user.name}</NavItem>
-                <NavItem onClick={this.logout}>Logout</NavItem>
-              </Nav>
+               <a href="#" className="pull-right" onClick={this.login}>Login</a>
+             ) : (
+               <div>
+                <a href="#" className="pull-right" onClick={this.logout}><i className="fa fa-sign-out"></i> Logout</a>
+                <a href="#" className="pull-right"><i className="fa fa-user"></i> {this.state.user.name}</a>
+                </div>
           )}
           </div>
-        </Navbar.Collapse>
-        </Navbar>
+        </div>
+      </div>
       </div>
     );
   }

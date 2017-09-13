@@ -84,7 +84,7 @@ case "serialcheck_reception" :
                         disabled: !this.state.disabled
                       });
                       this.serial_input.focus();
-                  }, 2000);
+                  }, 1000);
               } else {
                 that.setState({
                   formstyle: "form_serial_red",
@@ -100,7 +100,7 @@ case "serialcheck_reception" :
                           disabled: !this.state.disabled
                         });
                         this.serial_input.focus();
-                    }, 2000);
+                    }, 1000);
               }
             }
           )
@@ -131,7 +131,7 @@ case "serialcheck_videotest" :
                           disabled: !this.state.disabled
                         });
                         this.serial_input.focus();
-                    }, 2000);
+                    }, 1000);
               } else{
                 that.setState({
                   formstyle: "form_serial_red",
@@ -147,7 +147,7 @@ case "serialcheck_videotest" :
                           disabled: !this.state.disabled
                         });
                         this.serial_input.focus();
-                    }, 2000);
+                    }, 1000);
               }
             }
           )
