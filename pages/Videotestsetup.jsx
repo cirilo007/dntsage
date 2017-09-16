@@ -158,7 +158,7 @@ export default class Videotest extends React.Component {
               {this.state.active_step[0] ?
                 <div>
                   {this.state.active_step[0]['id_step'] == 1 ?
-                    <SerialForm formName="serialcheck_videotest" remaining={this.state.remaining} />
+                    <SerialForm formName="serialcheck_videotest" remaining={this.state.remaining} formInitialTitle="Anadir productos al banco de prueba" />
                   : null}
                 </div>
                 : null}

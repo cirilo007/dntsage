@@ -48,7 +48,7 @@ export default class Reception extends React.Component {
     return (
     <div>
       <h1><img src="img/taoscanner.png" alt="scanner" height="40" /> Reception</h1>
-      <SerialForm formName="serialcheck_reception" />
+      <SerialForm formName="serialcheck_reception" formInitialTitle="Ingresar producto" />
       <ListItems serials={this.state.serials} loading={this.state.loading}/>
     </div>
     )

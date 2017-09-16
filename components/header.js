@@ -50,6 +50,22 @@ export default class Header extends React.Component {
   render() {
     return (
       <div>
+        <div className="bg-banner">
+          <img src="img/sagemcom.png" height="30" />
+          <div className="pull-right">
+            <div className="login-info">
+            { !this.state.authenticated && !localStorage.getItem('id_token') ?
+               (
+                 <a href="#" className="pull-right" onClick={this.login}>Login</a>
+               ) : (
+                 <div>
+                  <a href="#" className="pull-right" onClick={this.logout}><i className="fa fa-sign-out"></i> Logout</a>
+                  <a href="#" className="pull-right"><i className="fa fa-user"></i> {this.state.user.name}</a>
+                  </div>
+            )}
+            </div>
+          </div>
+        </div>
       <Navbar collapseOnSelect fluid>
         <Navbar.Header>
           <Navbar.Brand>
@@ -83,22 +99,7 @@ export default class Header extends React.Component {
       }
         </Navbar.Collapse>
       </Navbar>
-      <div className="bg-banner">
-        <img src="img/sagemcom.png" height="30" />
-        <div className="pull-right">
-          <div className="login-info">
-          { !this.state.authenticated && !localStorage.getItem('id_token') ?
-             (
-               <a href="#" className="pull-right" onClick={this.login}>Login</a>
-             ) : (
-               <div>
-                <a href="#" className="pull-right" onClick={this.logout}><i className="fa fa-sign-out"></i> Logout</a>
-                <a href="#" className="pull-right"><i className="fa fa-user"></i> {this.state.user.name}</a>
-                </div>
-          )}
-          </div>
-        </div>
-      </div>
+
       </div>
     );
   }

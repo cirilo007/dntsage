@@ -4,18 +4,22 @@ import * as constants from '../constants/AppConstants.js';
 export default class SerialForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      products: [],
-      value: '',
-      formstyle: "form_serial",
-      disabled: false,
-      title_result: ""
-    };
+    this.state = this.getInitialState()
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  getInitialState() {
+      const initialState = {
+        products: [],
+        value: '',
+        formstyle: "form_serial",
+        disabled: false,
+        title_result: this.props.formInitialTitle
+      };
+      return initialState;
+  }
   componentDidMount() {
     switch(this.props.formName) {
 
@@ -39,20 +43,17 @@ export default class SerialForm extends React.Component {
 
   handleSubmit(event) {
 
-    if(isNaN(this.state.value)){
+    var first = this.state.value.charAt(0);
+
+    if(this.state.value.length < '12'){
       this.setState({
         formstyle: "form_serial_red",
         value: this.state.value,
-        title_result: "Serial Number should only contain numeric values",
+        title_result: "Serial Number invalido",
         disabled: !this.state.disabled
       });
       setTimeout(() => {
-              this.setState({
-                formstyle: "form_serial",
-                value: "",
-                title_result: "Escanear y instalar " + this.props.remaining + " productos",
-                disabled: !this.state.disabled
-              });
+              this.setState(this.getInitialState());
               this.serial_input.focus();
           }, 1000);
 
@@ -62,10 +63,15 @@ export default class SerialForm extends React.Component {
         var that = this;
 switch(this.props.formName) {
 case "serialcheck_reception" :
-          var url = 'http://'+ constants.LOCAL_SERVER +'/api/api.php/serials';
+          let product;
+
+          this.state.value.length === 12 ? ( product = "1") : (product = "2")
+
+
+          var url = 'http://'+ constants.LOCAL_SERVER +'/api/serials/add';
           fetch(url, {
             method: 'post',
-            body: JSON.stringify({id_serial: '', serial_number: this.state.value})
+            body: JSON.stringify({id_serial: '', serial_number: this.state.value, serial_id_product: product, user: localStorage.getItem('profile')})
           })
           .then(res=>res.text())
           .then(result=>{
@@ -77,12 +83,7 @@ case "serialcheck_reception" :
                 disabled: !this.state.disabled
               });
               setTimeout(() => {
-                      this.setState({
-                        formstyle: "form_serial",
-                        value: "",
-                        title_result: "Ingresar un producto",
-                        disabled: !this.state.disabled
-                      });
+                      this.setState(this.getInitialState());
                       this.serial_input.focus();
                   }, 1000);
               } else {
@@ -93,12 +94,7 @@ case "serialcheck_reception" :
                   disabled: !this.state.disabled
                 });
                 setTimeout(() => {
-                        this.setState({
-                          formstyle: "form_serial",
-                          value: "",
-                          title_result: "Ingresar un producto",
-                          disabled: !this.state.disabled
-                        });
+                        this.setState(this.getInitialState());
                         this.serial_input.focus();
                     }, 1000);
               }
@@ -107,9 +103,6 @@ case "serialcheck_reception" :
 
 break
 case "serialcheck_videotest" :
-          this.setState({
-            title_result: "Escanear :" + this.props.remaining
-          });
           var url = 'http://'+ constants.LOCAL_SERVER +'/api/changeState/1/'+ this.state.value;
           return fetch(url)
           .then((result) => {
@@ -124,12 +117,7 @@ case "serialcheck_videotest" :
                   disabled: !this.state.disabled
                 });
                 setTimeout(() => {
-                        this.setState({
-                          formstyle: "form_serial",
-                          value: "",
-                          title_result: "Escanear y instalar " + this.props.remaining + " productos",
-                          disabled: !this.state.disabled
-                        });
+                        this.setState(this.getInitialState());
                         this.serial_input.focus();
                     }, 1000);
               } else{
@@ -140,12 +128,7 @@ case "serialcheck_videotest" :
                   disabled: !this.state.disabled
                 });
                 setTimeout(() => {
-                        this.setState({
-                          formstyle: "form_serial",
-                          value: "",
-                          title_result: "Escanear y instalar " + this.props.remaining + " productos",
-                          disabled: !this.state.disabled
-                        });
+                        this.setState(this.getInitialState());
                         this.serial_input.focus();
                     }, 1000);
               }
