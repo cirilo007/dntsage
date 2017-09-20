@@ -77,12 +77,9 @@ export default class Layout extends React.Component {
               )}
             </div>
              :
-             <div className="text-center">
-               <br/>
-               <i className="fa fa-spinner fa-pulse fa-5x"></i>
-               <br/><br/>
-               Connecting to server....
-             </div>}
+             <div>
+               Connecting to server...
+            </div>}
 
          </div>
       );
