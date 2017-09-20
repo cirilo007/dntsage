@@ -11,10 +11,12 @@ export default class Header extends React.Component {
     super();
     this.state = {
       authenticated: false,
-      user:[]
+      user:[],
+      visible: false
     }
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
+    this.handleMouseOver = this.handleMouseOver.bind(this)
   }
 
   componentWillMount(){
@@ -45,12 +47,49 @@ export default class Header extends React.Component {
     window.location.reload();
   }
 
-
+  handleMouseOver() {
+      	this.setState({ visible: ! this.state.visible });
+      }
 
   render() {
     return (
       <div>
-        <div className="bg-banner">
+        <div className={this.state.visible ? "menu_show" : "menu_hide"}>
+              <Navbar collapseOnSelect fluid>
+                <Navbar.Header>
+                  <Navbar.Brand>
+                    <a href="#"><img src="img/logo2.png" alt="DNT" className="logo" /></a>
+
+                  </Navbar.Brand>
+                  <Navbar.Toggle />
+                </Navbar.Header>
+                <Navbar.Collapse>
+                { !this.state.authenticated && !localStorage.getItem('id_token') ? null :
+                <Nav>
+                  <LinkContainer to="/dashboard">
+                    <NavItem eventKey={1}><i className="fa fa-dashboard"></i> Dashboard</NavItem>
+                  </LinkContainer>
+                  <LinkContainer to="/reception">
+                    <NavItem eventKey={1}><i className="fa fa-truck"></i> Reception</NavItem>
+                  </LinkContainer>
+                  <LinkContainer to="/videotest">
+                    <NavItem eventKey={1}><i className="fa fa-youtube-play"></i> Video test</NavItem>
+                  </LinkContainer>
+                  <LinkContainer to="/repairs">
+                    <NavItem eventKey={1}><i className="fa fa-microchip"></i> Repairs</NavItem>
+                  </LinkContainer>
+                  <LinkContainer to="/refurbish">
+                    <NavItem eventKey={1}><i className="fa fa-recycle"></i> Refurbish</NavItem>
+                  </LinkContainer>
+                  <LinkContainer to="/packaging">
+                    <NavItem eventKey={1}><i className="fa fa-cubes"></i> Packaging</NavItem>
+                  </LinkContainer>
+                </Nav>
+              }
+                </Navbar.Collapse>
+              </Navbar>
+        </div>
+        <div className="bg-banner" onMouseOver={this.handleMouseOver}>
           <img src="img/sagemcom.png" height="30" />
           <div className="pull-right">
             <div className="login-info">
@@ -66,39 +105,6 @@ export default class Header extends React.Component {
             </div>
           </div>
         </div>
-      <Navbar collapseOnSelect fluid>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="#"><img src="img/logo2.png" alt="DNT" className="logo" /></a>
-
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-        { !this.state.authenticated && !localStorage.getItem('id_token') ? null :
-        <Nav>
-          <LinkContainer to="/dashboard">
-            <NavItem eventKey={1}><i className="fa fa-dashboard"></i> Dashboard</NavItem>
-          </LinkContainer>
-          <LinkContainer to="/reception">
-            <NavItem eventKey={1}><i className="fa fa-truck"></i> Reception</NavItem>
-          </LinkContainer>
-          <LinkContainer to="/videotest">
-            <NavItem eventKey={1}><i className="fa fa-youtube-play"></i> Video test</NavItem>
-          </LinkContainer>
-          <LinkContainer to="/repairs">
-            <NavItem eventKey={1}><i className="fa fa-microchip"></i> Repairs</NavItem>
-          </LinkContainer>
-          <LinkContainer to="/refurbish">
-            <NavItem eventKey={1}><i className="fa fa-recycle"></i> Refurbish</NavItem>
-          </LinkContainer>
-          <LinkContainer to="/packaging">
-            <NavItem eventKey={1}><i className="fa fa-cubes"></i> Packaging</NavItem>
-          </LinkContainer>
-        </Nav>
-      }
-        </Navbar.Collapse>
-      </Navbar>
 
       </div>
     );

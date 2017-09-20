@@ -68,13 +68,14 @@ case "serialcheck_reception" :
           this.state.value.length === 12 ? ( product = "1") : (product = "2")
 
 
-          var url = 'http://'+ constants.LOCAL_SERVER +'/api/serials/add';
+          var url = 'http://'+ constants.LOCAL_SERVER +'/api/serials/add/';
           fetch(url, {
             method: 'post',
             body: JSON.stringify({id_serial: '', serial_number: this.state.value, serial_id_product: product, user: localStorage.getItem('profile')})
           })
           .then(res=>res.text())
           .then(result=>{
+            console.log(result);
             if(result > 1){
               that.setState({
                 formstyle: "form_serial_green",
