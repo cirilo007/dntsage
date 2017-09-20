@@ -72,7 +72,7 @@ export default class Layout extends React.Component {
                 </div>
                 : (
                 <div className="text-center">
-                  <h3>Access denied <br/>Please <a href="#" onClick={this.login}>login</a></h3>
+                  <h3>Access denied <br/>Please login</h3>
                 </div>
               )}
             </div>
