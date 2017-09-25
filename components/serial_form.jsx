@@ -73,10 +73,10 @@ case "serialcheck_reception" :
             method: 'post',
             body: JSON.stringify({id_serial: '', serial_number: this.state.value, serial_id_product: product, user: localStorage.getItem('profile')})
           })
-          .then(res=>res.text())
+          .then(res=>res.json())
           .then(result=>{
             console.log(result);
-            if(result.status === 'ok'){
+            if(result.status == 'ok'){
               that.setState({
                 formstyle: "form_serial_green",
                 value: this.state.value,
