@@ -76,7 +76,7 @@ case "serialcheck_reception" :
           .then(res=>res.text())
           .then(result=>{
             console.log(result);
-            if(result > 1){
+            if(result.status === 'ok'){
               that.setState({
                 formstyle: "form_serial_green",
                 value: this.state.value,
