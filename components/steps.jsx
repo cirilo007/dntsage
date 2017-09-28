@@ -46,10 +46,14 @@ export default class Steps extends React.Component {
       <div className="steps">
         <br/>
         {content}
-        <button className="btn btn-md btn-warning pull-right" onClick={this.validateStep}>
-          Validar Etapa >>
-        </button>
+
+
         <div className="pull-right">
+          <ButtonSwitch />
+          <button className="btn btn-md btn-warning pull-right" onClick={this.validateStep}>
+            Validar Etapa >>
+          </button>
+
         </div>
       </div>
     );

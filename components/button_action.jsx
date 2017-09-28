@@ -26,7 +26,7 @@ export default class ButtonAction extends React.Component {
   render() {
     return (
       <div>
-        <button className="btn btn-md btn-danger" onClick={this.sendCommand.bind(this)}>
+        <button className="btn btn-md btn-default pull-left" onClick={this.sendCommand.bind(this)}>
           <FontAwesome
             className='balance-scale'
             name={this.props.ico}

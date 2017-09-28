@@ -117,7 +117,6 @@ export default class Videotest extends React.Component {
            bad: result.bad
          })
 
-         console.log(result.good);
        })
 
      }
@@ -150,9 +149,37 @@ export default class Videotest extends React.Component {
 
       return (
         <div className="container-fluid">
-          {this.state.active_step[0] != null ? <Steps steps={this.state.steps} /> : null }
+          {/*this.state.active_step[0] != null ? <Steps steps={this.state.steps} /> : null */}
+          <br/>
+          <div className="text-center">
 
-          <br />
+            <button className="btn btn-md btn-danger pull-right" onClick={this.validateTest}>
+              Terminar Prueba
+            </button>
+
+            <ButtonAction
+              name= "firmware upgrade"
+              ico= "recycle"
+              script="lirc.php?script=firmware"
+               />
+           <ButtonAction
+             name= "portal upgrade"
+             ico= "recycle"
+             script="lirc.php?script=portal"
+              />
+            <ButtonAction
+              name= "factory reset"
+              ico= "recycle"
+              script="lirc.php?script=factory"
+               />
+             <ButtonAction
+               name= "configuracion"
+               ico= "recycle"
+               script="lirc.php?script=config"
+                />
+              <ButtonSwitch />
+          </div>
+          <br /><br />
           {this.state.remaining > 0 ?
             <div>
               {this.state.active_step[0] ?
@@ -164,14 +191,6 @@ export default class Videotest extends React.Component {
                 : null}
             </div>
            : null}
-           {this.state.active_step[0] == null ?
-             <div className="text-center">
-               <button className="btn btn-md btn-danger" onClick={this.validateTest}>
-                 Terminar Prueba
-               </button>
-             </div>
-             :
-             null}
              <ListItemsVideoTest serials={this.state.serials} loading={this.state.loading} />
 
 
