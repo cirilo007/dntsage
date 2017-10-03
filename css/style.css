@@ -274,6 +274,10 @@ table.jsonTable td{
     display: inline;
     height:50px;
 }
+
+.divbutton button{
+  margin-right:10px;
+}
 @-webkit-keyframes fadein {
 from {
 opacity:0;
