@@ -151,7 +151,7 @@ export default class Videotest extends React.Component {
         <div className="container-fluid">
           {/*this.state.active_step[0] != null ? <Steps steps={this.state.steps} /> : null */}
           <br/>
-          <div className="text-center divbutton">
+          <div className="divbutton">
 
 
 
@@ -166,8 +166,12 @@ export default class Videotest extends React.Component {
               script="lirc.php?script=factory"
                />
                <button className="btn btn-md btn-danger" onClick={this.validateTest}>
-                 Terminar Prueba
-               </button>
+                  Terminar Prueba
+                </button>
+             <ButtonSwitch />
+
+
+
 
           </div>
           <br /><br />

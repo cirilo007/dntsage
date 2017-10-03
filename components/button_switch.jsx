@@ -41,7 +41,7 @@ export default class ButtonAction extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="pull-right">
         <Switch
           onColor = "warning"
           offColor = "danger"
