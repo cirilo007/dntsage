@@ -8,7 +8,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 // Components
 import Layout from './pages/Layout.jsx';
 import Dashboard from './pages/Dashboard.jsx';
-import Videotest from './pages/Videotest.jsx';
+import Videotest from './pages/Videotester.jsx';
 import Reception from './pages/Reception.jsx';
 
 import Repairs from './pages/Repairs.jsx';
