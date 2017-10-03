@@ -9,6 +9,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import Layout from './pages/Layout.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Videotest from './pages/Videotest.jsx';
+import Videotester from './pages/Videotester.jsx';
 import Reception from './pages/Reception.jsx';
 
 import Repairs from './pages/Repairs.jsx';
@@ -21,6 +22,7 @@ render((
       <Route exact path="/dashboard" component={Dashboard} />
       <Route path="/reception" component={Reception} />
       <Route path="/videotest" component={Videotest} />
+      <Route path="/videotester" component={Videotester} />
       <Route path="/repairs" component={Repairs} />
       <Route path="/refurbish" component={Refurbish} />
       </Layout>
