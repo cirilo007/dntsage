@@ -37,7 +37,7 @@ export default class Reception extends React.Component {
     componentDidMount() {
       this.getSerials();
       this.interval = setInterval(
-        this.getSerials,2000);
+        this.getSerials,10000);
     }
 
     componentWillUnmount() {
