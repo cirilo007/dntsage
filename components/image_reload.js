@@ -120,6 +120,8 @@ export default class ImageReload extends React.Component {
       } else{
         document.getElementById(imageid).src="/img/disabled.png";
       }
+
+      self.props.teststatus == 1  ? document.getElementById(imageid).src="/img/disabled.png" : "";
     };
 
     self.setState({showLoader: false });
@@ -261,6 +263,8 @@ export default class ImageReload extends React.Component {
 
       }
     }
+
+
 
       return (
       <div className="bg-black">
