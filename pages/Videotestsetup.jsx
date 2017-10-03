@@ -158,22 +158,17 @@ export default class Videotest extends React.Component {
             </button>
 
             <ButtonAction
-              name= "firmware upgrade"
+              name= "1- firmware upgrade"
               ico= "recycle"
               script="lirc.php?script=firmware"
                />
-           <ButtonAction
-             name= "portal upgrade"
-             ico= "recycle"
-             script="lirc.php?script=portal"
-              />
             <ButtonAction
-              name= "factory reset"
+              name= "2- factory reset"
               ico= "recycle"
               script="lirc.php?script=factory"
                />
              <ButtonAction
-               name= "configuracion"
+               name= "3- configuracion"
                ico= "recycle"
                script="lirc.php?script=config"
                 />
