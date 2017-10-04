@@ -16,7 +16,7 @@ export default class Steps extends React.Component {
 
 
      validateStep(){
-       var url = 'http://'+ constants.LOCAL_SERVER +'/api/validateStep/';
+       var url = 'http://'+ constants.LOCAL_SERVER +'/validateStep/';
        fetch(url)
        .then(res=>res.text())
        .then(window.location.reload())

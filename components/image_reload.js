@@ -46,7 +46,7 @@ export default class ImageReload extends React.Component {
   }
 
   getSymptoms(){
-    var url = 'http://'+ constants.LOCAL_SERVER +'/api/symptoms/'+this.props.serial_id;
+    var url = 'http://'+ constants.LOCAL_SERVER +'/symptoms/'+this.props.serial_id;
 
     return fetch(url)
     .then((result) => {

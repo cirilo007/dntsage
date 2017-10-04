@@ -68,7 +68,7 @@ case "serialcheck_reception" :
           this.state.value.length === 12 ? ( product = "1") : (product = "2")
 
 
-          var url = 'http://'+ constants.LOCAL_SERVER +'/api/serials/add/';
+          var url = 'http://'+ constants.LOCAL_SERVER +'/serials/add/';
           fetch(url, {
             method: 'post',
             body: JSON.stringify({id_serial: '', serial_number: this.state.value, serial_id_product: product, user: localStorage.getItem('profile')})
@@ -104,7 +104,7 @@ case "serialcheck_reception" :
 
 break
 case "serialcheck_videotest" :
-          var url = 'http://'+ constants.LOCAL_SERVER +'/api/changeState/1/'+ this.state.value;
+          var url = 'http://'+ constants.LOCAL_SERVER +'/changeState/1/'+ this.state.value;
           return fetch(url)
           .then((result) => {
             return result.json();

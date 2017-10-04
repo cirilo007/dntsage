@@ -19,7 +19,7 @@ export default class ButtonAction extends React.Component {
     //exec("sudo sh /home/pi/lirc_01.sh", puts);
 
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'http://'+ constants.LOCAL_SERVER +'/'+this.props.script, true);
+      xhr.open('GET', 'http://'+ constants.ACTION_SERVER +'/'+this.props.script, true);
       xhr.send();
   }
 
