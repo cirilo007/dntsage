@@ -6,7 +6,6 @@ import SerialForm from '../components/serial_form.jsx';
 import ListItemsVideoTest from '../components/list_items_videotest.jsx';
 import ButtonSwitch from '../components/button_switch.jsx';
 import ButtonAction from '../components/button_action.jsx';
-import Steps from '../components/steps.jsx';
 import Modal from 'react-modal'
 
 import * as constants from '../constants/AppConstants';

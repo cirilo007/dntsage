@@ -30,7 +30,8 @@ export default class ListSymptoms extends React.Component {
       fetch(url)
       .then(res=>res.text())
       .then(result=>{
-      //  console.log(result)
+        alert();
+        console.log(result)
         }
       )
 
@@ -41,7 +42,7 @@ render() {
 
    let content = Object.keys(this.props.symptoms).map(function(key) {
    return <div key={key} className="symptom">
-           <input type="checkbox" value={that.props.symptoms[key][0]} onChange={that.checkChange} defaultChecked={that.props.symptoms[key]['id_serial'] ? true : false }></input> {that.props.symptoms[key][1]} - {that.props.symptoms[key]['id_serial']}
+           <input type="checkbox" value={that.props.symptoms[key][0]} onChange={that.checkChange} defaultChecked={that.props.symptoms[key]['id_serial'] ? true : false }></input> {that.props.symptoms[key][1]} 
           </div>
   });
 

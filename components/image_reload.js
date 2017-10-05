@@ -56,7 +56,7 @@ export default class ImageReload extends React.Component {
         this.setState({
           symptoms: items
         });
-        //console.log(items);
+        console.log(items);
       }
     )
   }
