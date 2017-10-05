@@ -21,7 +21,7 @@ export default class Dashboard extends React.Component {
 
   getOverview(){
     var that = this;
-    var url = 'http://'+ constants.LOCAL_SERVER +'/api/overview/';
+    var url = 'http://'+ constants.LOCAL_SERVER +'/overview/';
 
     return fetch(url)
     .then((result) => {

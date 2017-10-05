@@ -20,7 +20,7 @@ export default class Refurbish extends React.Component {
 
     getSerials(){
       var that = this;
-      var url = 'http://'+ constants.LOCAL_SERVER +'/api/serials/3';
+      var url = 'http://'+ constants.LOCAL_SERVER +'/serials/3';
 
       return fetch(url)
       .then((result) => {

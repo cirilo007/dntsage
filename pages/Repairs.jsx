@@ -19,7 +19,7 @@ export default class Repairs extends React.Component {
 
     getSerials(){
       var that = this;
-      var url = 'http://'+ constants.LOCAL_SERVER +'/api/serials/2';
+      var url = 'http://'+ constants.LOCAL_SERVER +'/serials/2';
 
       return fetch(url)
       .then((result) => {

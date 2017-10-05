@@ -19,7 +19,7 @@ export default class Reception extends React.Component {
 
     getSerials(){
       var that = this;
-      var url = 'http://'+ constants.LOCAL_SERVER +'/api/serials/0';
+      var url = 'http://'+ constants.LOCAL_SERVER +'/serials/0';
 
       return fetch(url)
       .then((result) => {

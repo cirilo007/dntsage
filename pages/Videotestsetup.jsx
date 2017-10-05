@@ -37,7 +37,7 @@ export default class Videotest extends React.Component {
      }
       getSerials(){
         var that = this;
-        var url = 'http://'+ constants.LOCAL_SERVER +'/api/serials-active/';
+        var url = 'http://'+ constants.LOCAL_SERVER +'/serials-active/';
 
         return fetch(url)
         .then((result) => {
@@ -54,7 +54,7 @@ export default class Videotest extends React.Component {
       }
       getSteps(){
         var that = this;
-        var url = 'http://'+ constants.LOCAL_SERVER +'/api/steps/';
+        var url = 'http://'+ constants.LOCAL_SERVER +'/steps/';
 
         return fetch(url)
         .then((result) => {
@@ -70,7 +70,7 @@ export default class Videotest extends React.Component {
 
       getActiveStep(){
         var that = this;
-        var url = 'http://'+ constants.LOCAL_SERVER +'/api/getActiveStep/';
+        var url = 'http://'+ constants.LOCAL_SERVER +'/getActiveStep/';
 
         return fetch(url)
         .then((result) => {
@@ -106,7 +106,7 @@ export default class Videotest extends React.Component {
 
 
      validateTest(){
-       var url = 'http://'+ constants.LOCAL_SERVER +'/api/validateTest';
+       var url = 'http://'+ constants.LOCAL_SERVER +'/validateTest';
        fetch(url)
        .then(res=>res.json())
        .then(result=>{

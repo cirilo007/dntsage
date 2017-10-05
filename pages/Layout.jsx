@@ -38,7 +38,7 @@ export default class Layout extends React.Component {
 
   testPing(){
     var that = this;
-    var url = 'http://'+ constants.LOCAL_SERVER +'/api/serials-active/';
+    var url = 'http://'+ constants.LOCAL_SERVER +'/serials-active/';
 
     return fetch(url)
     .then((result) => {
