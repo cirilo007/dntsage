@@ -194,12 +194,6 @@ export default class Videotest extends React.Component {
                  contentLabel="Video Modal"
                >
                  <h1>Mover Cajas</h1>
-                   <div className="text-success">
-                       <ul className="list-group">
-                         <li className="list-group-item list-group-item-success"> <i className="fa fa-check fa-2x"></i> Cajas OK</li>
-                         {serials_good}
-                       </ul>
-                  </div>
                   <div className="text-danger">
                        <ul className="list-group">
                          <li className="list-group-item list-group-item-danger"><i className="fa fa-check fa-2x"></i> Cajas NOT OK</li>
