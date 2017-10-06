@@ -7,6 +7,9 @@ export default class ButtonAction extends React.Component {
 
   constructor(props) {
          super(props);
+         this.state = {
+           disabled:false
+         };
 
      }
   componentDidMount() {
@@ -21,12 +24,13 @@ export default class ButtonAction extends React.Component {
       var xhr = new XMLHttpRequest();
       xhr.open('GET', 'http://'+ constants.ACTION_SERVER +'/'+this.props.script, true);
       xhr.send();
+      this.setState({disabled:true});
   }
 
   render() {
     return (
       <div>
-        <button className="btn btn-md btn-default pull-left" onClick={this.sendCommand.bind(this)}>
+        <button className="btn btn-md btn-default pull-left" disabled={this.state.disabled} onClick={this.sendCommand.bind(this)}>
           <FontAwesome
             className='balance-scale'
             name={this.props.ico}

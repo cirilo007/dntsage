@@ -102,15 +102,15 @@ export default class ImageReload extends React.Component {
           //  color: "holder bg-danger",
             message: "No signal from HDMI" }
           );
-//            document.getElementById(imageid).src="/img/no-signal.jpg";
-            document.getElementById(imageid).src="data:image/png;base64,"+base64;
+            document.getElementById(imageid).src="/img/no-signal.jpg";
+//            document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
-        else if (bytes > 60000) {
+        else if (bytes > 100000) {
           self.setState({
           //  color: "holder bg-danger",
             message: "No signal from HDMI" });
-//            document.getElementById(imageid).src="/img/no-signal.jpg";
-            document.getElementById(imageid).src="data:image/png;base64,"+base64;
+            document.getElementById(imageid).src="/img/no-signal.jpg";
+            //document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else {
           // self.setState({color: "holder bg-success" });
