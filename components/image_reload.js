@@ -370,10 +370,6 @@ export default class ImageReload extends React.Component {
           ref={(input) => { this.serial_input = input; }}
           type="text" value={this.state.value} onChange={this.handleChange} autoFocus />
 
-
-
-
-          <input name="newserial" className="form-control" autoFocus onChange={this.handleChange}></input>
         </form>
 
       </div>
