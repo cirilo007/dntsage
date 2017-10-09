@@ -278,6 +278,15 @@ table.jsonTable td{
 .divbutton button{
   margin-right:10px;
 }
+
+.modalchangebutton{
+  position: absolute;
+  width: 20px;
+  top:0px;
+  right:25px;
+  z-index:1000000000000;
+  color:#212121;
+}
 @-webkit-keyframes fadein {
 from {
 opacity:0;

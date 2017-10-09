@@ -79,7 +79,7 @@ export default class Videotest extends React.Component {
             that.setState({
               active_step: items
             });
-            console.log(items)
+            //console.log(items)
           }
         )
       }
@@ -176,18 +176,10 @@ export default class Videotest extends React.Component {
           <br /><br />
           {this.state.remaining > 0 ?
             <div>
-              {this.state.active_step[0] ?
-                <div>
-                  {this.state.active_step[0]['id_step'] == 1 ?
-                    <SerialForm formName="serialcheck_videotest" remaining={this.state.remaining} formInitialTitle="Anadir productos al banco de prueba" />
-                  : null}
-                </div>
-                : null}
+              <SerialForm formName="serialcheck_videotest" remaining={this.state.remaining} formInitialTitle="Anadir productos al banco de prueba" />
             </div>
            : null}
              <ListItemsVideoTest serials={this.state.serials} loading={this.state.loading} />
-
-
                <Modal
                  isOpen={this.state.modalopen}
                  contentLabel="Video Modal"

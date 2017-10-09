@@ -22,18 +22,24 @@ export default class ImageReload extends React.Component {
            message: "Connecting...",
            showLoader: false,
            modalopen: false,
+           modalchangeopen: false,
            feedimage: '/img/ajax-loader.gif',
            modaltitle: '',
            controls: '',
-           symptoms:[]
+           symptoms:[],
+           value: ""
          };
          this.tick = this.tick.bind(this);
          this.componentDidMount = this.componentDidMount.bind(this);
          this.openModal = this.openModal.bind(this);
          this.closeModal = this.closeModal.bind(this);
+         this.openChangeModal = this.openChangeModal.bind(this);
+         this.closeChangeModal = this.closeChangeModal.bind(this);
          this.mouseEnter = this.mouseEnter.bind(this);
          this.mouseExit = this.mouseExit.bind(this);
          this.getSymptoms = this.getSymptoms.bind(this);
+         this.handleChange = this.handleChange.bind(this);
+         this.changeform = this.changeform.bind(this);
      }
   componentDidMount() {
     this.interval = setInterval(
@@ -56,7 +62,7 @@ export default class ImageReload extends React.Component {
         this.setState({
           symptoms: items
         });
-        console.log(items);
+        //console.log(items);
       }
     )
   }
@@ -66,7 +72,7 @@ export default class ImageReload extends React.Component {
     var xhr = new XMLHttpRequest();
     var imageid = "video_"+this.props.name;
     xhr.open('GET', this.props.url + "?time="+new Date().getTime(), true);
-    xhr.timeout = 1500,
+    xhr.timeout = 1500;
     xhr.responseType = 'arraybuffer';
 
     xhr.ontimeout = function(e) {
@@ -102,15 +108,15 @@ export default class ImageReload extends React.Component {
           //  color: "holder bg-danger",
             message: "No signal from HDMI" }
           );
-            document.getElementById(imageid).src="/img/no-signal.jpg";
-//            document.getElementById(imageid).src="data:image/png;base64,"+base64;
+          //  document.getElementById(imageid).src="/img/no-signal.jpg";
+           document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else if (bytes > 100000) {
           self.setState({
           //  color: "holder bg-danger",
             message: "No signal from HDMI" });
-            document.getElementById(imageid).src="/img/no-signal.jpg";
-            //document.getElementById(imageid).src="data:image/png;base64,"+base64;
+            //document.getElementById(imageid).src="/img/no-signal.jpg";
+            document.getElementById(imageid).src="data:image/png;base64,"+base64;
         }
         else {
           // self.setState({color: "holder bg-success" });
@@ -121,12 +127,17 @@ export default class ImageReload extends React.Component {
         document.getElementById(imageid).src="/img/disabled.png";
       }
 
-      self.props.teststatus == 1  ? document.getElementById(imageid).src="/img/disabled.png" : "";
+      //self.props.teststatus == 1  ? document.getElementById(imageid).src="/img/disabled.png" : "";
     };
 
     self.setState({showLoader: false });
     xhr.send();
   }
+
+
+
+
+
   customBase64Encode (inputStr) {
       var
           bbLen               = 3,
@@ -234,6 +245,36 @@ export default class ImageReload extends React.Component {
         feedimage: '/img/ajax-loader.gif'
       });
     }
+
+    openChangeModal() {
+        this.setState({
+          modalchangeopen: true
+        });
+        return false;
+        }
+    closeChangeModal() {
+        this.setState({
+          modalchangeopen: false
+        });
+      }
+
+      handleChange(event) {
+        this.setState({value: event.target.value});
+
+      }
+
+      changeform(e){
+
+        var url = 'http://'+ constants.LOCAL_SERVER +'/switchserial/' + this.props.name + '/' + this.state.value;
+        fetch(url).then(res=>res.json())
+        .then(result=>{
+          console.log(result);
+        })
+        e.preventDefault();
+        this.closeChangeModal();
+
+      }
+
   render() {
     var imageid = "video_"+this.props.name;
     var ipaddress = this.props.url.split("/");
@@ -280,6 +321,11 @@ export default class ImageReload extends React.Component {
                                    : null}
 
         </h5>
+        {this.props.teststatus == 1 ?
+        <div className="modalchangebutton pull-right">
+          <button onClick={this.openChangeModal}><i className="fa fa-exchange" ></i></button>
+        </div>
+        : null }
 
         <small className="timer">
           <i className="fa fa-barcode"></i> {this.props.serial}
@@ -308,6 +354,22 @@ export default class ImageReload extends React.Component {
           <img src={this.state.feedimage} alt="" className="monitor_image"/>
         </div>
       </Modal>
+      <Modal
+
+        isOpen={this.state.modalchangeopen}
+        contentLabel="Cambiar equipo"
+        style={modalstyle}
+      >
+      <div className="text-center">
+        <button className="close_modal" onClick={this.closeChangeModal}>Close</button>
+        <br />
+        <h2>Cambiar de equipo {this.props.serial} slot #{this.props.name}</h2>
+        <form onSubmit={this.changeform}>
+          <input name="newserial" className="form-control" autoFocus onChange={this.handleChange}></input>
+        </form>
+
+      </div>
+    </Modal>
 
       </div>
     );

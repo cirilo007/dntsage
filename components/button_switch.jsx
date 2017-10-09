@@ -13,28 +13,18 @@ export default class ButtonAction extends React.Component {
      }
 
   componentDidMount(){
-    var sys = require('sys');
-    var exec = require('child_process').exec;
-    function puts(error, stdout, stderr) { sys.puts(stdout) ; alert(error); }
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', "http://"+ constants.ACTION_SERVER +"/hdmiswitch.php?test=3", true);
-      xhr.send();
+    fetch("http://192.168.1.100/hdmiswitch.php?test=3")
 
   }
 
   sendCommand(e) {
     if(this.state.switchState){
-      var url = 'http://'+ constants.ACTION_SERVER +'/hdmiswitch.php?test=1';
+      var url = 'http://192.168.1.100/hdmiswitch.php?test=1';
     } else {
-      var url = 'http://'+ constants.ACTION_SERVER +'/hdmiswitch.php?test=3';
+      var url = 'http://192.168.1.100/hdmiswitch.php?test=3';
     }
     this.setState( { switchState: !this.state.switchState } );
-    var sys = require('sys');
-    var exec = require('child_process').exec;
-    function puts(error, stdout, stderr) { sys.puts(stdout) ; alert(error); }
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', url, true);
-      xhr.send();
+    fetch(url);
 
   }
 
