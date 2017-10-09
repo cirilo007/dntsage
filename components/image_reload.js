@@ -272,6 +272,7 @@ export default class ImageReload extends React.Component {
         })
         e.preventDefault();
         this.closeChangeModal();
+        this.serial_input.focus();
 
       }
 
@@ -365,6 +366,13 @@ export default class ImageReload extends React.Component {
         <br />
         <h2>Cambiar de equipo {this.props.serial} slot #{this.props.name}</h2>
         <form onSubmit={this.changeform}>
+          <input
+          ref={(input) => { this.serial_input = input; }}
+          type="text" value={this.state.value} onChange={this.handleChange} autoFocus />
+
+
+
+
           <input name="newserial" className="form-control" autoFocus onChange={this.handleChange}></input>
         </form>
 
