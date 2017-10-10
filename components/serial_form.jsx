@@ -122,7 +122,7 @@ case "serialcheck_videotest" :
                         this.serial_input.focus();
                     }, 1000);
                 // turn on led
-              //  fetch('http://'+ constants.ACTION_SERVER +'/led.php?id_led='+ items.slot);
+                fetch('http://'+ constants.ACTION_SERVER +'/serial_write.php?tosend='+ items.slot);
               } else{
                 that.setState({
                   formstyle: "form_serial_red",
