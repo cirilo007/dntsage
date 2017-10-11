@@ -135,8 +135,10 @@ export default class Videotest extends React.Component {
       <span><i className="fa fa-barcode"></i> {that.state.good[key][1]}</span>
     </li>
     });
-
+    var arraytosend = "";
     var serials_bad = Object.keys(that.state.bad).map(function(key) {
+    arraytosend += that.state.bad[key][2] + ",";
+
     return <li key={key} className="list-group-item">
       <span className="label label-danger">{that.state.bad[key][2]}</span>
       &nbsp;&nbsp;
@@ -144,6 +146,7 @@ export default class Videotest extends React.Component {
     </li>
 
     });
+    fetch('http://'+ constants.ACTION_SERVER +'/serial_write.php?tosend='+ arraytosend + ';');
 
 
       return (
