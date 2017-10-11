@@ -123,6 +123,7 @@ export default class Videotest extends React.Component {
          this.setState({
            modalopen: false
          });
+         fetch('http://'+ constants.ACTION_SERVER +'/serial_write.php?tosend=lightoff;');
          window.location.reload();
        }
 
