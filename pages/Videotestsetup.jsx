@@ -120,10 +120,11 @@ export default class Videotest extends React.Component {
 
      }
      closeModal() {
+         fetch('http://'+ constants.ACTION_SERVER +'/serial_write.php?tosend=on');
          this.setState({
            modalopen: false
          });
-         fetch('http://'+ constants.ACTION_SERVER +'/serial_write.php?tosend=lightoff;');
+
          window.location.reload();
        }
 
