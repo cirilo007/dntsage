@@ -272,7 +272,7 @@ export default class ImageReload extends React.Component {
         })
         e.preventDefault();
         this.closeChangeModal();
-        this.serial_input.focus();
+        window.location.reload();
 
       }
 
