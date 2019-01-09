@@ -10,7 +10,7 @@ export default class Header extends React.Component {
   constructor() {
     super();
     this.state = {
-      authenticated: false,
+      authenticated: true,
       user:[],
       visible: false
     }
@@ -64,7 +64,6 @@ export default class Header extends React.Component {
                ) : (
                  <div>
                   <a href="#" className="pull-right" onClick={this.logout}><i className="fa fa-sign-out"></i> Logout</a>
-                  <a href="#" className="pull-right"><i className="fa fa-user"></i> {this.state.user.name}</a>
                   </div>
             )}
             </div>

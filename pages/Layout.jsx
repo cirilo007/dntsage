@@ -8,8 +8,9 @@ export default class Layout extends React.Component {
   constructor() {
     super();
     this.state = {
-      authenticated: localStorage.getItem('id_token') ? true : false,
-      testping: false
+      authenticated: true,
+      //authenticated: localStorage.getItem('id_token') ? true : false,
+      testping: true
     }
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
