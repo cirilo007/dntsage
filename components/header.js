@@ -28,7 +28,7 @@ export default class Header extends React.Component {
   login() {
     this.props.lock.show((err, profile, token) => {
       if (err) {
-        alert(err);
+        alert("error is : " + err);
         return;
       }
       AuthActions.logUserIn(profile, token);
